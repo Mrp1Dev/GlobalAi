@@ -189,3 +189,17 @@ data class DemoReviewScenario(
     val expectedSeverity: Severity,
     val businessContext: String
 )
+
+/**
+ * A visitor review submitted in the app, with on-device analysis and Noor's action tracking.
+ */
+data class SubmittedReview(
+    val id: String = java.util.UUID.randomUUID().toString(),
+    val author: String = "Visiting Tourist",
+    val originalText: String,
+    val timestamp: Long = System.currentTimeMillis(),
+    val analysisResult: ReviewAnalysisResult? = null,
+    val acceptedSuggestions: Set<String> = emptySet(),
+    val dismissedSuggestions: Set<String> = emptySet()
+)
+

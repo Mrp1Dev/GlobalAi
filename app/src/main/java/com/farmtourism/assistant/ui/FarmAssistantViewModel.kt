@@ -20,6 +20,9 @@ import com.farmtourism.assistant.ui.navigation.AppMode
 import com.farmtourism.assistant.backend.review.demo.DemoReviewScenarios
 import com.farmtourism.assistant.backend.review.model.DemoReviewScenario
 import com.farmtourism.assistant.backend.review.model.ReviewAnalysisResult
+import com.farmtourism.assistant.backend.review.model.SubmittedReview
+import com.farmtourism.assistant.ui.navigation.FarmerTab
+import com.farmtourism.assistant.ui.navigation.TouristTab
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -28,6 +31,8 @@ import kotlinx.coroutines.launch
 
 data class FarmAssistantUiState(
     val currentMode: AppMode = AppMode.TOURIST,
+    val currentTouristTab: TouristTab = TouristTab.CHAT,
+    val currentFarmerTab: FarmerTab = FarmerTab.INBOX,
     val isDarkTheme: Boolean = false,
     val isProcessing: Boolean = false,
     val isNoorSubmitting: Boolean = false,
@@ -40,14 +45,21 @@ data class FarmAssistantUiState(
     val databaseSlots: Map<String, String> = emptyMap(),
     val templates: List<IntentTemplate> = emptyList(),
     val showSettingsSheet: Boolean = false,
-    val isAnalyzingReview: Boolean = false,
-    val reviewAnalysisInput: String = "Die Tour über die Kaffeefarm war wunderbar organisiert und alles war sehr sauber.",
-    val reviewAnalysisResult: ReviewAnalysisResult? = null,
-    val selectedDemoScenarioId: String? = "demo-1-german-clean",
+    // Dedicated Reviews Section State
+    val submittedReviews: List<SubmittedReview> = emptyList(),
+    val selectedReviewId: String? = null,
+    val isSubmittingReview: Boolean = false,
+    val reviewSubmissionSuccess: Boolean = false,
+    val reviewInputText: String = "",
+    val reviewAuthorInput: String = "Visiting Tourist",
+    val selectedDemoScenarioId: String? = null,
     val lastError: String? = null
 ) {
     val pendingInquiriesCount: Int
         get() = (if (pendingTier2Request != null) 1 else 0) + (if (pendingTier3FarmerPrompt != null) 1 else 0)
+
+    val selectedReview: SubmittedReview?
+        get() = submittedReviews.find { it.id == selectedReviewId } ?: submittedReviews.firstOrNull()
 }
 
 class FarmAssistantViewModel(
@@ -74,6 +86,7 @@ class FarmAssistantViewModel(
         viewModelScope.launch {
             runCatching { backend.initialize() }
             refreshDatabaseState()
+            seedInitialDemoReviews()
         }
     }
 
@@ -294,54 +307,107 @@ class FarmAssistantViewModel(
         }
     }
 
-    // Review Analyzer Operations
-    fun setReviewInput(text: String) {
-        _uiState.update { it.copy(reviewAnalysisInput = text) }
+    // Tab Navigation within Modes
+    fun switchTouristTab(tab: TouristTab) {
+        _uiState.update { it.copy(currentTouristTab = tab, reviewSubmissionSuccess = false) }
+    }
+
+    fun switchFarmerTab(tab: FarmerTab) {
+        _uiState.update { it.copy(currentFarmerTab = tab) }
+    }
+
+    // Review Operations (Separate Section)
+    fun setReviewInputText(text: String) {
+        _uiState.update { it.copy(reviewInputText = text, reviewSubmissionSuccess = false) }
+    }
+
+    fun setReviewAuthorInput(author: String) {
+        _uiState.update { it.copy(reviewAuthorInput = author) }
+    }
+
+    fun selectReview(reviewId: String) {
+        _uiState.update { it.copy(selectedReviewId = reviewId) }
     }
 
     fun selectDemoScenario(scenario: DemoReviewScenario) {
         _uiState.update {
             it.copy(
-                reviewAnalysisInput = scenario.originalReview,
+                reviewInputText = scenario.originalReview,
+                reviewAuthorInput = "Tourist (${scenario.visitorLanguageName})",
                 selectedDemoScenarioId = scenario.id,
-                reviewAnalysisResult = null,
+                reviewSubmissionSuccess = false,
                 lastError = null
             )
         }
     }
 
-    fun analyzeReview(reviewText: String? = null) {
-        val textToAnalyze = reviewText ?: _uiState.value.reviewAnalysisInput
-        if (textToAnalyze.isBlank()) return
+    fun submitTouristReview(text: String? = null, author: String? = null) {
+        val reviewText = (text ?: _uiState.value.reviewInputText).trim()
+        val authorName = (author ?: _uiState.value.reviewAuthorInput).trim().ifBlank { "Visiting Tourist" }
+        if (reviewText.isBlank()) return
 
         viewModelScope.launch {
-            _uiState.update { it.copy(isAnalyzingReview = true, lastError = null) }
-            val outcome = backend.analyzeReview(textToAnalyze)
-            outcome.onSuccess { result ->
-                _uiState.update {
-                    it.copy(
-                        isAnalyzingReview = false,
-                        reviewAnalysisResult = result
-                    )
-                }
-            }.onFailure { err ->
-                _uiState.update {
-                    it.copy(
-                        isAnalyzingReview = false,
-                        lastError = err.localizedMessage ?: "Failed to analyze review"
-                    )
-                }
+            _uiState.update { it.copy(isSubmittingReview = true, lastError = null) }
+            val outcome = backend.analyzeReview(reviewText)
+            val analysis = outcome.getOrNull()
+
+            val newReview = SubmittedReview(
+                author = authorName,
+                originalText = reviewText,
+                analysisResult = analysis
+            )
+
+            _uiState.update {
+                it.copy(
+                    isSubmittingReview = false,
+                    reviewSubmissionSuccess = true,
+                    submittedReviews = listOf(newReview) + it.submittedReviews,
+                    selectedReviewId = newReview.id,
+                    reviewInputText = "",
+                    selectedDemoScenarioId = null
+                )
             }
         }
     }
 
-    fun clearReviewAnalysis() {
+    fun toggleAcceptSuggestion(reviewId: String, aspect: String) {
+        _uiState.update { state ->
+            val updated = state.submittedReviews.map { review ->
+                if (review.id == reviewId) {
+                    val currentAccepted = review.acceptedSuggestions
+                    val newAccepted = if (currentAccepted.contains(aspect)) {
+                        currentAccepted - aspect
+                    } else {
+                        currentAccepted + aspect
+                    }
+                    review.copy(acceptedSuggestions = newAccepted)
+                } else review
+            }
+            state.copy(submittedReviews = updated)
+        }
+    }
+
+    fun dismissReviewSuccessMessage() {
+        _uiState.update { it.copy(reviewSubmissionSuccess = false) }
+    }
+
+    private suspend fun seedInitialDemoReviews() {
+        val initialList = mutableListOf<SubmittedReview>()
+        for (scenario in DemoReviewScenarios.SCENARIOS) {
+            val outcome = backend.analyzeReview(scenario.originalReview)
+            initialList.add(
+                SubmittedReview(
+                    id = scenario.id,
+                    author = "Visitor (${scenario.visitorLanguageName})",
+                    originalText = scenario.originalReview,
+                    analysisResult = outcome.getOrNull()
+                )
+            )
+        }
         _uiState.update {
             it.copy(
-                reviewAnalysisInput = "",
-                reviewAnalysisResult = null,
-                selectedDemoScenarioId = null,
-                lastError = null
+                submittedReviews = initialList,
+                selectedReviewId = initialList.firstOrNull()?.id
             )
         }
     }

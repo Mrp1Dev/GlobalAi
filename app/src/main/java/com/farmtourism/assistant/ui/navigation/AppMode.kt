@@ -17,13 +17,13 @@ enum class AppMode(
     )
 }
 
-enum class TouristTab(val title: String) {
-    CHAT("Ask Noor"),
-    EXPLORE("Farm Guide & Highlights")
+enum class TouristTab(val title: String, val subtitle: String) {
+    CHAT("💬 Ask Noor", "Inquiry Assistant"),
+    REVIEWS("⭐ Leave Review", "Visitor Feedback")
 }
 
 enum class FarmerTab(val title: String, val hindiTitle: String) {
-    INBOX("Inbox", "संदेश"),
-    KNOWLEDGE_BASE("Farm DB", "खेत डेटाबेस"),
-    EDGE_SETTINGS("Offline ML", "ऑफ़लाइन मॉडल")
+    INBOX("💬 Inquiries", "पर्यटक संदेश"),
+    REVIEW_INSIGHTS("⭐ Review Insights", "समीक्षा एवं सुझाव")
 }
+

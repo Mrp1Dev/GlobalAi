@@ -53,6 +53,15 @@ import com.farmtourism.assistant.ui.theme.FarmTourismTheme
 import com.farmtourism.assistant.ui.theme.Tier1Green
 import com.farmtourism.assistant.ui.theme.Tier2Amber
 
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRow
+import androidx.compose.material3.TabRowDefaults
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
+import com.farmtourism.assistant.ui.navigation.FarmerTab
+import com.farmtourism.assistant.ui.navigation.TouristTab
+import com.farmtourism.assistant.ui.screens.NoorReviewDashboardView
+import com.farmtourism.assistant.ui.screens.TouristReviewView
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FarmAssistantApp(
@@ -79,7 +88,7 @@ fun FarmAssistantApp(
                                         text = if (state.currentMode == AppMode.TOURIST) {
                                             state.farmerProfile.farmName
                                         } else {
-                                            "नमस्ते ${state.farmerProfile.name}! (Noor's Chat)"
+                                            "नमस्ते ${state.farmerProfile.name}! (Noor's Portal)"
                                         },
                                         style = MaterialTheme.typography.titleMedium,
                                         fontWeight = FontWeight.Bold,
@@ -89,7 +98,7 @@ fun FarmAssistantApp(
                                         text = if (state.currentMode == AppMode.TOURIST) {
                                             "Host: Noor (Hindi/हिन्दी) • On-Device AI"
                                         } else {
-                                            "पर्यटक चैट • ऑन-डिवाइस अनुवाद"
+                                            "पर्यटक चैट एवं समीक्षा • ऑन-डिवाइस अनुवाद"
                                         },
                                         style = MaterialTheme.typography.labelSmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -133,6 +142,16 @@ fun FarmAssistantApp(
                             pendingCount = state.pendingInquiriesCount,
                             onSelectMode = { viewModel.switchMode(it) }
                         )
+
+                        // Mode-Specific Sub-Tabs: Chat vs Reviews
+                        ModeSubTabBar(
+                            currentMode = state.currentMode,
+                            currentTouristTab = state.currentTouristTab,
+                            currentFarmerTab = state.currentFarmerTab,
+                            reviewsCount = state.submittedReviews.size,
+                            onSelectTouristTab = { viewModel.switchTouristTab(it) },
+                            onSelectFarmerTab = { viewModel.switchFarmerTab(it) }
+                        )
                     }
                 }
             }
@@ -142,20 +161,42 @@ fun FarmAssistantApp(
                     .fillMaxSize()
                     .padding(innerPadding)
             ) {
+                val activeTab = if (state.currentMode == AppMode.TOURIST) {
+                    state.currentTouristTab.name
+                } else {
+                    state.currentFarmerTab.name
+                }
+
                 AnimatedContent(
-                    targetState = state.currentMode,
+                    targetState = "${state.currentMode}_$activeTab",
                     transitionSpec = { fadeIn() togetherWith fadeOut() },
-                    label = "RoleTransition"
-                ) { targetMode ->
-                    when (targetMode) {
-                        AppMode.TOURIST -> TouristChatView(
-                            state = state,
-                            viewModel = viewModel
-                        )
-                        AppMode.FARMER_NOOR -> NoorChatView(
-                            state = state,
-                            viewModel = viewModel
-                        )
+                    label = "ScreenTransition"
+                ) {
+                    when (state.currentMode) {
+                        AppMode.TOURIST -> {
+                            when (state.currentTouristTab) {
+                                TouristTab.CHAT -> TouristChatView(
+                                    state = state,
+                                    viewModel = viewModel
+                                )
+                                TouristTab.REVIEWS -> TouristReviewView(
+                                    state = state,
+                                    viewModel = viewModel
+                                )
+                            }
+                        }
+                        AppMode.FARMER_NOOR -> {
+                            when (state.currentFarmerTab) {
+                                FarmerTab.INBOX -> NoorChatView(
+                                    state = state,
+                                    viewModel = viewModel
+                                )
+                                FarmerTab.REVIEW_INSIGHTS -> NoorReviewDashboardView(
+                                    state = state,
+                                    viewModel = viewModel
+                                )
+                            }
+                        }
                     }
                 }
             }
@@ -254,3 +295,84 @@ private fun RoleSwitchBar(
         )
     }
 }
+
+@Composable
+private fun ModeSubTabBar(
+    currentMode: AppMode,
+    currentTouristTab: TouristTab,
+    currentFarmerTab: FarmerTab,
+    reviewsCount: Int,
+    onSelectTouristTab: (TouristTab) -> Unit,
+    onSelectFarmerTab: (FarmerTab) -> Unit
+) {
+    if (currentMode == AppMode.TOURIST) {
+        val tabs = listOf(TouristTab.CHAT, TouristTab.REVIEWS)
+        val selectedIndex = tabs.indexOf(currentTouristTab).coerceAtLeast(0)
+
+        TabRow(
+            selectedTabIndex = selectedIndex,
+            containerColor = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.primary,
+            indicator = { tabPositions ->
+                if (selectedIndex in tabPositions.indices) {
+                    TabRowDefaults.SecondaryIndicator(
+                        modifier = Modifier.tabIndicatorOffset(tabPositions[selectedIndex]),
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
+        ) {
+            tabs.forEach { tab ->
+                val isSelected = tab == currentTouristTab
+                Tab(
+                    selected = isSelected,
+                    onClick = { onSelectTouristTab(tab) },
+                    text = {
+                        Text(
+                            text = tab.title,
+                            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                            fontSize = 13.sp
+                        )
+                    }
+                )
+            }
+        }
+    } else {
+        val tabs = listOf(FarmerTab.INBOX, FarmerTab.REVIEW_INSIGHTS)
+        val selectedIndex = tabs.indexOf(currentFarmerTab).coerceAtLeast(0)
+
+        TabRow(
+            selectedTabIndex = selectedIndex,
+            containerColor = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.secondary,
+            indicator = { tabPositions ->
+                if (selectedIndex in tabPositions.indices) {
+                    TabRowDefaults.SecondaryIndicator(
+                        modifier = Modifier.tabIndicatorOffset(tabPositions[selectedIndex]),
+                        color = MaterialTheme.colorScheme.secondary
+                    )
+                }
+            }
+        ) {
+            tabs.forEach { tab ->
+                val isSelected = tab == currentFarmerTab
+                Tab(
+                    selected = isSelected,
+                    onClick = { onSelectFarmerTab(tab) },
+                    text = {
+                        Text(
+                            text = if (tab == FarmerTab.REVIEW_INSIGHTS && reviewsCount > 0) {
+                                "${tab.title} ($reviewsCount)"
+                            } else {
+                                "${tab.title} (${tab.hindiTitle})"
+                            },
+                            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                            fontSize = 12.sp
+                        )
+                    }
+                )
+            }
+        }
+    }
+}
+
