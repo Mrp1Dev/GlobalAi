@@ -18,6 +18,10 @@ import com.farmtourism.assistant.backend.pipeline.Tier2PromptRequest
 import com.farmtourism.assistant.backend.pipeline.Tier2TemplatePipeline
 import com.farmtourism.assistant.backend.pipeline.Tier3FallbackPipeline
 import com.farmtourism.assistant.backend.pipeline.TouristTurnResult
+import com.farmtourism.assistant.backend.review.ReviewAnalyzerEngine
+import com.farmtourism.assistant.backend.review.classifier.IReviewClassifier
+import com.farmtourism.assistant.backend.review.classifier.ReviewAspectClassifier
+import com.farmtourism.assistant.backend.review.model.ReviewAnalysisResult
 import java.util.Collections
 
 /**
@@ -27,6 +31,7 @@ import java.util.Collections
  * 1. Tier 1: Sub-100ms Automated Fast-Path via local database hit.
  * 2. Tier 2: Template-Guided Human-in-the-Loop when database slot is missing.
  * 3. Tier 3: Direct Two-Way On-Device Translation Fallback for open-ended queries.
+ * Plus on-device multilingual review understanding and suggestion generation for Noor.
  */
 class FarmAssistantBackend(
     val farmerProfile: FarmerProfile = FarmerProfile(),
@@ -34,6 +39,7 @@ class FarmAssistantBackend(
     private val languageIdentifier: ILanguageIdentifier = MlKitLanguageIdentifier(),
     private val intentClassifier: IIntentClassifier = OnnxIntentClassifier(),
     private val database: IFarmDatabase = LocalFarmDatabase(),
+    private val reviewClassifier: IReviewClassifier = ReviewAspectClassifier(),
     private val defaultTouristLanguage: String = "en"
 ) {
 
@@ -53,6 +59,13 @@ class FarmAssistantBackend(
         languageIdentifier = languageIdentifier,
         farmerProfile = farmerProfile,
         defaultTouristLanguage = defaultTouristLanguage
+    )
+
+    val reviewAnalyzerEngine = ReviewAnalyzerEngine(
+        languageIdentifier = languageIdentifier,
+        translationEngine = translationEngine,
+        reviewClassifier = reviewClassifier,
+        defaultFarmerLanguage = farmerProfile.language
     )
 
     private val conversationHistory = Collections.synchronizedList(mutableListOf<ConversationTurn>())
@@ -227,11 +240,24 @@ class FarmAssistantBackend(
     }
 
     /**
+     * Executes the end-to-end review understanding and suggestion pipeline on a visitor review.
+     * Detects language, translates to Noor's tongue, extracts aspects and severity, and produces
+     * actionable deterministic recommendations.
+     */
+    suspend fun analyzeReview(
+        reviewText: String,
+        targetLanguage: String? = null
+    ): Result<ReviewAnalysisResult> {
+        return reviewAnalyzerEngine.analyzeReview(reviewText, targetLanguage)
+    }
+
+    /**
      * Releases active native resources, translators, ONNX sessions, and ML Kit clients.
      */
     fun shutdown() {
         translationEngine.close()
         languageIdentifier.close()
         intentClassifier.close()
+        reviewAnalyzerEngine.close()
     }
 }

@@ -17,6 +17,9 @@ import com.farmtourism.assistant.backend.pipeline.Tier2PromptRequest
 import com.farmtourism.assistant.backend.pipeline.TouristTurnResult
 import com.farmtourism.assistant.ui.model.UiChatMessage
 import com.farmtourism.assistant.ui.navigation.AppMode
+import com.farmtourism.assistant.backend.review.demo.DemoReviewScenarios
+import com.farmtourism.assistant.backend.review.model.DemoReviewScenario
+import com.farmtourism.assistant.backend.review.model.ReviewAnalysisResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -37,6 +40,10 @@ data class FarmAssistantUiState(
     val databaseSlots: Map<String, String> = emptyMap(),
     val templates: List<IntentTemplate> = emptyList(),
     val showSettingsSheet: Boolean = false,
+    val isAnalyzingReview: Boolean = false,
+    val reviewAnalysisInput: String = "Die Tour über die Kaffeefarm war wunderbar organisiert und alles war sehr sauber.",
+    val reviewAnalysisResult: ReviewAnalysisResult? = null,
+    val selectedDemoScenarioId: String? = "demo-1-german-clean",
     val lastError: String? = null
 ) {
     val pendingInquiriesCount: Int
@@ -282,6 +289,58 @@ class FarmAssistantViewModel(
                 pendingTier2Request = null,
                 pendingTier3FarmerPrompt = null,
                 touristWaitingForReply = false,
+                lastError = null
+            )
+        }
+    }
+
+    // Review Analyzer Operations
+    fun setReviewInput(text: String) {
+        _uiState.update { it.copy(reviewAnalysisInput = text) }
+    }
+
+    fun selectDemoScenario(scenario: DemoReviewScenario) {
+        _uiState.update {
+            it.copy(
+                reviewAnalysisInput = scenario.originalReview,
+                selectedDemoScenarioId = scenario.id,
+                reviewAnalysisResult = null,
+                lastError = null
+            )
+        }
+    }
+
+    fun analyzeReview(reviewText: String? = null) {
+        val textToAnalyze = reviewText ?: _uiState.value.reviewAnalysisInput
+        if (textToAnalyze.isBlank()) return
+
+        viewModelScope.launch {
+            _uiState.update { it.copy(isAnalyzingReview = true, lastError = null) }
+            val outcome = backend.analyzeReview(textToAnalyze)
+            outcome.onSuccess { result ->
+                _uiState.update {
+                    it.copy(
+                        isAnalyzingReview = false,
+                        reviewAnalysisResult = result
+                    )
+                }
+            }.onFailure { err ->
+                _uiState.update {
+                    it.copy(
+                        isAnalyzingReview = false,
+                        lastError = err.localizedMessage ?: "Failed to analyze review"
+                    )
+                }
+            }
+        }
+    }
+
+    fun clearReviewAnalysis() {
+        _uiState.update {
+            it.copy(
+                reviewAnalysisInput = "",
+                reviewAnalysisResult = null,
+                selectedDemoScenarioId = null,
                 lastError = null
             )
         }
