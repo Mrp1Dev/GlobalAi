@@ -58,10 +58,13 @@ class FarmAssistantBackend(
     private val conversationHistory = Collections.synchronizedList(mutableListOf<ConversationTurn>())
 
     /**
-     * Initializes the backend by ensuring the host farmer's native tongue model
-     * (e.g., Hindi) is downloaded and ready for on-device inference.
+     * Initializes the backend: loads the on-device intent classifier and ensures the
+     * host farmer's native tongue model (e.g., Hindi) is downloaded for translation.
      */
     suspend fun initialize(): Result<Unit> = runCatching {
+        // Classifier first: it works offline, unlike the translation model download below.
+        intentClassifier.warmUp()
+
         val farmerLang = farmerProfile.language
         if (!translationEngine.isModelDownloaded(farmerLang)) {
             translationEngine.downloadModel(farmerLang).getOrThrow()

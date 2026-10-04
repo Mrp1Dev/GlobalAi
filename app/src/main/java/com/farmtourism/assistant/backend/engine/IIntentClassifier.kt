@@ -15,6 +15,11 @@ interface IIntentClassifier {
     val confidenceThreshold: Float
 
     /**
+     * Loads models ahead of the first query. Optional; [classify] loads lazily otherwise.
+     */
+    suspend fun warmUp() {}
+
+    /**
      * Classifies the intent of an incoming natural language text query.
      */
     suspend fun classify(text: String): Result<IntentClassificationResult>
