@@ -85,6 +85,16 @@ class LocalFarmDatabase(
                         val desc = obj.optString("description", "")
                         val defaultReply = obj.getString("default_reply_template")
                         val sampleVal = obj.optString("sample_slot_value", "")
+                        val sampleValHi = obj.optString("sample_slot_value_hi", "")
+                        val defaultReplyHi = obj.optString("default_reply_template_hi", "")
+
+                        val sampleMap = mutableMapOf<String, String>()
+                        if (sampleVal.isNotBlank()) sampleMap["en"] = sampleVal
+                        if (sampleValHi.isNotBlank()) sampleMap["hi"] = sampleValHi
+
+                        val replyMap = mutableMapOf<String, String>()
+                        replyMap["en"] = defaultReply
+                        if (defaultReplyHi.isNotBlank()) replyMap["hi"] = defaultReplyHi
 
                         val noorMap = mutableMapOf<String, String>()
                         if (obj.has("noor_prompt_template")) {
@@ -129,6 +139,8 @@ class LocalFarmDatabase(
                             noorPromptTemplates = noorMap,
                             defaultReplyTemplate = defaultReply,
                             sampleSlotValue = sampleVal,
+                            sampleSlotValuesByLang = sampleMap,
+                            replyTemplatesByLang = replyMap,
                             replyTemplateVariations = replyVariations,
                             noorPromptVariations = noorVariations
                         )
@@ -153,7 +165,9 @@ class LocalFarmDatabase(
                     "hi" to "इस फार्म टूर की प्रति व्यक्ति कीमत क्या है?"
                 ),
                 defaultReplyTemplate = "The price for a guided farm tour is ₹{tour_price_inr} per person.",
-                sampleSlotValue = "500"
+                sampleSlotValue = "500",
+                sampleSlotValuesByLang = mapOf("en" to "500 rs", "hi" to "₹500 प्रति व्यक्ति"),
+                replyTemplatesByLang = mapOf("hi" to "हमारे कॉफी फार्म वॉक का टिकट प्रति व्यक्ति {tour_price_inr} है, जिसमें गाइडेड टूर और टेस्टिंग शामिल है।")
             ),
             IntentTemplate(
                 intent = "price_produce",
@@ -163,7 +177,12 @@ class LocalFarmDatabase(
                     "hi" to "खेत के ताजे फल, सब्जियों और जैविक उत्पादों की कीमत क्या है?"
                 ),
                 defaultReplyTemplate = "Our fresh produce prices: {produce_pricing_info}.",
-                sampleSlotValue = "Organic honey is ₹400/jar, seasonal fruits are ₹80/kg"
+                sampleSlotValue = "Organic honey is ₹400/jar, seasonal fruits are ₹80/kg",
+                sampleSlotValuesByLang = mapOf(
+                    "en" to "Roasted Arabica coffee is ₹450/250g, unroasted green parchment is ₹300/kg, wild forest honey is ₹350/jar, maize is ₹50/kg, and organic beans are ₹120/kg.",
+                    "hi" to "भुनी अरेबिका कॉफी ₹450/250g, जंगली शहद ₹350/जार, और जैविक बीन्स ₹120/kg"
+                ),
+                replyTemplatesByLang = mapOf("hi" to "हमारे पहाड़ी फार्म में आपका स्वागत है! फार्म से खरीदारी के लिए दरें: {produce_pricing_info}।")
             ),
             IntentTemplate(
                 intent = "visitation_hours",
@@ -173,7 +192,12 @@ class LocalFarmDatabase(
                     "hi" to "खेत पर्यटकों के लिए कब खुलता और बंद होता है?"
                 ),
                 defaultReplyTemplate = "The farm is open for visitors from {opening_hours}.",
-                sampleSlotValue = "9:00 AM to 6:00 PM Tuesday through Sunday"
+                sampleSlotValue = "9:00 AM to 6:00 PM Tuesday through Sunday",
+                sampleSlotValuesByLang = mapOf(
+                    "en" to "8:30 AM to 5:30 PM (Tuesday to Sunday, closed Mondays for harvesting)",
+                    "hi" to "सुबह 8:30 से शाम 5:30 बजे (मंगलवार से रविवार, सोमवार कटाई हेतु बंद)"
+                ),
+                replyTemplatesByLang = mapOf("hi" to "आप {opening_hours} के दौरान हमारे फार्म पर आ सकते हैं, हमें आपको कॉफी बागान दिखाने में खुशी होगी।")
             ),
             IntentTemplate(
                 intent = "farm_location_directions",
@@ -183,7 +207,12 @@ class LocalFarmDatabase(
                     "hi" to "खेत का पता और यहाँ पहुँचने का रास्ता क्या है?"
                 ),
                 defaultReplyTemplate = "The farm is located at {location_directions}. Free parking is available on site.",
-                sampleSlotValue = "5 km off Highway 48, near Lotus Village"
+                sampleSlotValue = "5 km off Highway 48, near Lotus Village",
+                sampleSlotValuesByLang = mapOf(
+                    "en" to "Ondera Highlands, 12 km from district town along Valley Ridge Road; parking is free on site",
+                    "hi" to "ओंडेरा हाइलैंड्स, वैली रिज रोड, जिला शहर से 12 किमी; फार्म पर मुफ्त पार्किंग उपलब्ध है"
+                ),
+                replyTemplatesByLang = mapOf("hi" to "आप हमें {location_directions} पर पा सकते हैं — मुख्य सड़क छोड़ने के बाद कॉफी के दिशा-संकेतों का पालन करें।")
             ),
             IntentTemplate(
                 intent = "activities_available",
@@ -193,7 +222,12 @@ class LocalFarmDatabase(
                     "hi" to "पर्यटक खेत पर क्या-क्या गतिविधियां कर सकते हैं?"
                 ),
                 defaultReplyTemplate = "Activities available on the farm include: {farm_activities}.",
-                sampleSlotValue = "fruit picking, cow milking, tractor rides, and organic farming workshops"
+                sampleSlotValue = "fruit picking, cow milking, tractor rides, and organic farming workshops",
+                sampleSlotValuesByLang = mapOf(
+                    "en" to "coffee harvesting walks, pulping mill demonstrations, artisanal cupping sessions, and guided highland nature trails",
+                    "hi" to "कॉफी बीन्स चुनना, पल्पिंग मिल देखना, कॉफी टेस्टिंग सत्र और गाइडेड नेचर ट्रेल वॉक"
+                ),
+                replyTemplatesByLang = mapOf("hi" to "हमारे फार्म में आपका स्वागत है! यहाँ आप {farm_activities} का आनंद ले सकते हैं।")
             ),
             IntentTemplate(
                 intent = "amenities_food",
@@ -203,7 +237,12 @@ class LocalFarmDatabase(
                     "hi" to "खेत में भोजन, चाय, शौचालय और विश्राम की क्या सुविधाएं हैं?"
                 ),
                 defaultReplyTemplate = "Farm amenities: {amenities_food_info}.",
-                sampleSlotValue = "clean restrooms, safe drinking water, and authentic vegetarian lunch"
+                sampleSlotValue = "clean restrooms, safe drinking water, and authentic vegetarian lunch",
+                sampleSlotValuesByLang = mapOf(
+                    "en" to "freshly brewed single-origin coffee, traditional highland bean lunch, clean western-style restrooms, and spring drinking water",
+                    "hi" to "ताज़ी बनी कॉफी, पारंपरिक पहाड़ी दोपहर का भोजन, स्वच्छ शौचालय और शुद्ध प्राकृतिक पेयजल"
+                ),
+                replyTemplatesByLang = mapOf("hi" to "स्वागत है! फार्म पर आप सुंदर नजारों के साथ {amenities_food_info} का आनंद ले सकते हैं।")
             ),
             IntentTemplate(
                 intent = "pet_policy",
@@ -213,7 +252,12 @@ class LocalFarmDatabase(
                     "hi" to "खेत में पालतू जानवरों (जैसे कुत्तों) के लिए क्या नियम हैं?"
                 ),
                 defaultReplyTemplate = "Our pet policy: {pet_policy_rules}.",
-                sampleSlotValue = "friendly dogs on leashes are warmly welcome"
+                sampleSlotValue = "friendly dogs on leashes are warmly welcome",
+                sampleSlotValuesByLang = mapOf(
+                    "en" to "well-behaved dogs on leashes are welcome on the outdoor trails; pets are restricted from the coffee drying tables",
+                    "hi" to "पट्टे से बंधे शांत कुत्तों का बाहरी रास्तों पर स्वागत है; कॉफी सुखाने वाली मेजों के पास पालतू जानवर प्रतिबंधित हैं"
+                ),
+                replyTemplatesByLang = mapOf("hi" to "हमारी पालतू पशु नीति स्पष्ट है: {pet_policy_rules}।")
             ),
             IntentTemplate(
                 intent = "booking_reservation",
@@ -223,7 +267,12 @@ class LocalFarmDatabase(
                     "hi" to "क्या खेत आने के लिए पहले से बुकिंग जरूरी है या सीधे आ सकते हैं?"
                 ),
                 defaultReplyTemplate = "Booking policy: {booking_requirements}.",
-                sampleSlotValue = "advance booking is recommended on weekends, walk-ins welcome on weekdays"
+                sampleSlotValue = "advance booking is recommended on weekends, walk-ins welcome on weekdays",
+                sampleSlotValuesByLang = mapOf(
+                    "en" to "advance notice of at least 24 hours is required for guided tours and farm lunch; walk-ins may self-walk outer trails",
+                    "hi" to "गाइडेड टूर और फार्म लंच के लिए कम से कम 24 घंटे पहले सूचना आवश्यक है; बिना बुकिंग बाहरी रास्तों पर घूम सकते हैं"
+                ),
+                replyTemplatesByLang = mapOf("hi" to "नमस्ते! हमारे गाइडेड टूर और फार्म लंच के लिए, {booking_requirements}।")
             ),
             IntentTemplate(
                 intent = "tour_duration_difficulty",
@@ -233,7 +282,12 @@ class LocalFarmDatabase(
                     "hi" to "खेत भ्रमण (टूर) में कितना समय लगता है और चढ़ाई का रास्ता कैसा है?"
                 ),
                 defaultReplyTemplate = "Our guided farm tour takes about {tour_duration_difficulty_info}.",
-                sampleSlotValue = "1.5 to 2 hours of gentle walking along highland coffee trails; comfortable walking shoes recommended"
+                sampleSlotValue = "1.5 to 2 hours of gentle walking along highland coffee trails; comfortable walking shoes recommended",
+                sampleSlotValuesByLang = mapOf(
+                    "en" to "1.5 to 2 hours along gentle highland coffee trails; comfortable walking shoes and light rain jackets are recommended",
+                    "hi" to "कॉफी बागानों में 1.5 से 2 घंटे की आसान वॉक; आरामदायक जूते पहनने की सलाह दी जाती है"
+                ),
+                replyTemplatesByLang = mapOf("hi" to "हमारे कॉफी ट्रेल टूर में लगभग {tour_duration_difficulty_info} का समय लगता है।")
             ),
             IntentTemplate(
                 intent = "out_of_scope",
@@ -243,7 +297,9 @@ class LocalFarmDatabase(
                     "hi" to "यह प्रश्न सीधा अनुवाद के जरिए नूर तक पहुँचाया जाएगा।"
                 ),
                 defaultReplyTemplate = "Let me connect you directly with Noor for your question.",
-                sampleSlotValue = ""
+                sampleSlotValue = "",
+                sampleSlotValuesByLang = mapOf("en" to "", "hi" to ""),
+                replyTemplatesByLang = mapOf("hi" to "मुझे खेद है, मेरे पास यह जानकारी नहीं है, लेकिन मैं फार्म टूर या कॉफी के बारे में आपकी मदद कर सकती हूँ।")
             )
         )
 

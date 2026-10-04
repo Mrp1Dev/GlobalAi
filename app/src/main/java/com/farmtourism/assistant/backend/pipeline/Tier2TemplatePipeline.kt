@@ -14,6 +14,7 @@ data class Tier2PromptRequest(
     val intent: String,
     val slotKey: String,
     val promptForNoor: String,
+    val defaultReplyForNoor: String = "",
     val template: IntentTemplate
 )
 
@@ -51,12 +52,14 @@ class Tier2TemplatePipeline(
         template: IntentTemplate
     ): Tier2PromptRequest {
         val noorPrompt = template.getNoorPrompt(farmerProfile.language)
+        val defaultReply = template.getSampleSlotValue(farmerProfile.language)
         return Tier2PromptRequest(
             touristOriginalText = touristMessage,
             touristLanguage = touristLanguage,
             intent = intent,
             slotKey = template.slotKey,
             promptForNoor = noorPrompt,
+            defaultReplyForNoor = defaultReply,
             template = template
         )
     }
@@ -72,15 +75,30 @@ class Tier2TemplatePipeline(
         val startTime = System.currentTimeMillis()
         val cleanValue = farmerValueInput.trim()
 
-        // 1. Cache atomic value into local database for future instant hits
+        // 1. Cache atomic value into local database for future instant hits (persisting Noor's Hindi entry)
         database.setSlot(promptRequest.slotKey, cleanValue)
 
-        // 2. Populate English template
-        val englishReply = promptRequest.template.fillTemplate(cleanValue)
+        // 2. If entered in Hindi (Devanagari), translate the database entry to English first for template filling
+        val isDevanagari = cleanValue.any { it in '\u0900'..'\u097F' }
+        val englishSlotValue = if (isDevanagari) {
+            val trans = translationEngine.translate(
+                text = cleanValue,
+                sourceLanguage = "hi",
+                targetLanguage = "en"
+            ).getOrThrow().translatedText
+            if (trans.isNotBlank()) trans else cleanValue
+        } else {
+            cleanValue
+        }
 
-        // 3. Translate to tourist's language on-device
+        // 3. Populate English template
+        val englishReply = promptRequest.template.fillTemplate(englishSlotValue)
+
+        // 4. Translate to tourist's language on-device
         val translationResult = if (promptRequest.touristLanguage == "en") {
             englishReply
+        } else if (promptRequest.touristLanguage == "hi" && isDevanagari) {
+            promptRequest.template.fillTemplate(cleanValue, languageCode = "hi")
         } else {
             translationEngine.translate(
                 text = englishReply,

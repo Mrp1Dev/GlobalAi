@@ -143,6 +143,86 @@ class FullPipelineTest {
     }
 
     @Test
+    fun testTier2_FarmerEntersHindi_TranslatesToTouristLanguage_WhileDatabaseStoresHindi() = runBlocking {
+        // Arrange: produce_pricing_info is not seeded in database yet
+        val spanishQuery = "¿Cuánto cuesta la miel de bosque y el café?"
+        fakeLanguageIdentifier.mockLanguage = "es"
+        fakeIntentClassifier.registerMockClassification(
+            text = spanishQuery,
+            intent = "price_produce",
+            confidence = 0.96f
+        )
+
+        // Act 1: Tourist asks question -> DB Miss triggers Tier 2 Prompt Request
+        val firstResult = backend.processTouristMessage(spanishQuery).getOrThrow()
+        assertTrue("Should trigger Tier 2 prompt request", firstResult is UnifiedTouristResult.Tier2PromptRequired)
+        val promptReq = (firstResult as UnifiedTouristResult.Tier2PromptRequired).promptRequest
+
+        // Assert: Prompt is in Hindi AND default reply for Noor is in Hindi
+        assertEquals("price_produce", promptReq.intent)
+        assertEquals("produce_pricing_info", promptReq.slotKey)
+        assertEquals("खेत के ताजे फल, सब्जियों और जैविक उत्पादों की कीमत क्या है?", promptReq.promptForNoor)
+        assertTrue(
+            "Default reply for Noor must be in Hindi",
+            promptReq.defaultReplyForNoor.contains("शहद") || promptReq.template.getSampleSlotValue("hi").contains("शहद")
+        )
+
+        // Act 2: Noor inputs a custom answer in HINDI
+        val noorHindiInput = "ताजा जंगली शहद ₹350 प्रति जार और भुनी कॉफी ₹450"
+        val translatedEnglishSlot = "fresh wild forest honey is ₹350 per jar and roasted coffee is ₹450"
+
+        fakeTranslationEngine.registerMockTranslation(
+            text = noorHindiInput,
+            source = "hi",
+            target = "en",
+            result = translatedEnglishSlot
+        )
+        fakeTranslationEngine.registerMockTranslation(
+            text = "Our fresh produce prices: fresh wild forest honey is ₹350 per jar and roasted coffee is ₹450.",
+            source = "en",
+            target = "es",
+            result = "Nuestros precios de productos frescos: la miel silvestre cuesta 350 ₹ por tarro y el café tostado 450 ₹."
+        )
+
+        val completion = backend.completeTier2Prompt(
+            promptRequest = promptReq,
+            farmerValueInput = noorHindiInput
+        ).getOrThrow()
+
+        // Assert: Database strictly stores Noor's original Hindi filling
+        val storedInDb = backend.getDatabaseSlot("produce_pricing_info")
+        assertEquals(noorHindiInput, storedInDb)
+
+        // Assert: Tourist received properly translated Spanish response
+        assertEquals(
+            "Nuestros precios de productos frescos: la miel silvestre cuesta 350 ₹ por tarro y el café tostado 450 ₹.",
+            completion.responseInTouristLanguage
+        )
+
+        // Act 3: Next tourist asks in French on same intent -> Hits Tier 1, translates Hindi DB slot to French!
+        val frenchQuery = "Quel est le prix du miel?"
+        fakeLanguageIdentifier.mockLanguage = "fr"
+        fakeIntentClassifier.registerMockClassification(
+            text = frenchQuery,
+            intent = "price_produce",
+            confidence = 0.95f
+        )
+        fakeTranslationEngine.registerMockTranslation(
+            text = "Our fresh produce prices: fresh wild forest honey is ₹350 per jar and roasted coffee is ₹450.",
+            source = "en",
+            target = "fr",
+            result = "Nos prix de produits frais : le miel de forêt est à 350 ₹ par pot et le café torréfié à 450 ₹."
+        )
+
+        val tier1Result = backend.processTouristMessage(frenchQuery).getOrThrow()
+        assertTrue("Subsequent query must hit Tier 1", tier1Result is UnifiedTouristResult.Tier1Hit)
+        val tier1 = (tier1Result as UnifiedTouristResult.Tier1Hit).result
+        assertEquals("Nos prix de produits frais : le miel de forêt est à 350 ₹ par pot et le café torréfié à 450 ₹.", tier1.responseInTouristLanguage)
+        // Database STILL retains Noor's Hindi entry
+        assertEquals(noorHindiInput, backend.getDatabaseSlot("produce_pricing_info"))
+    }
+
+    @Test
     fun testTier3_OutOfScope_DirectFallbackToNoor() = runBlocking {
         // Arrange
         val weatherQuery = "Va-t-il pleuvoir demain après-midi?"

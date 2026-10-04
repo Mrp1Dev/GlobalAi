@@ -209,7 +209,7 @@ class FarmAssistantViewModel(
                 val replyBubble = UiChatMessage(
                     sender = MessageSender.FARMER,
                     touristText = completion.responseInTouristLanguage,
-                    noorText = "नूर: $enteredValue (${completion.englishReply})",
+                    noorText = "नूर: $enteredValue",
                     touristLanguage = completion.touristLanguage,
                     tier = PipelineTier.TIER_2_TEMPLATE_PROMPT,
                     latencyMs = completion.latencyMs

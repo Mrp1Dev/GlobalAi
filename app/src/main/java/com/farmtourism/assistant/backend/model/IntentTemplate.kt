@@ -14,9 +14,21 @@ data class IntentTemplate(
     val noorPromptTemplates: Map<String, String>,
     val defaultReplyTemplate: String,
     val sampleSlotValue: String = "",
+    val sampleSlotValuesByLang: Map<String, String> = emptyMap(),
+    val replyTemplatesByLang: Map<String, String> = emptyMap(),
     val replyTemplateVariations: List<String> = listOf(defaultReplyTemplate),
     val noorPromptVariations: Map<String, List<String>> = emptyMap()
 ) {
+    /**
+     * Retrieves the localized pre-written sample reply to assist Noor in her configured language.
+     * Defaults to Hindi ("hi") if available, then fallback to base sampleSlotValue.
+     */
+    fun getSampleSlotValue(languageCode: String = "hi"): String {
+        return sampleSlotValuesByLang[languageCode]
+            ?: sampleSlotValuesByLang["hi"]
+            ?: sampleSlotValue
+    }
+
     /**
      * Retrieves the localized question to display to Noor in her configured language.
      * Optionally selects a specific variation index or defaults to the primary prompt.
@@ -46,10 +58,13 @@ data class IntentTemplate(
 
     /**
      * Injects the database/farmer value into a reply template.
-     * Optionally selects a specific predetermined variation index.
+     * Supports languageCode-specific reply templates (e.g. Hindi reply templates)
+     * and optionally selects a specific predetermined variation index.
      */
-    fun fillTemplate(slotValue: String, variationIndex: Int? = null): String {
-        val template = if (variationIndex != null && variationIndex in replyTemplateVariations.indices) {
+    fun fillTemplate(slotValue: String, languageCode: String = "en", variationIndex: Int? = null): String {
+        val template = if (languageCode != "en" && replyTemplatesByLang.containsKey(languageCode)) {
+            replyTemplatesByLang[languageCode] ?: defaultReplyTemplate
+        } else if (variationIndex != null && variationIndex in replyTemplateVariations.indices) {
             replyTemplateVariations[variationIndex]
         } else {
             defaultReplyTemplate

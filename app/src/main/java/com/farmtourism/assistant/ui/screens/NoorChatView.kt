@@ -234,7 +234,12 @@ private fun NoorInlineTier2Card(
     onSubmit: (String) -> Unit,
     onDismiss: () -> Unit
 ) {
-    var valueInput by remember(request) { mutableStateOf(request.template.sampleSlotValue) }
+    var valueInput by remember(request) {
+        val defaultText = request.defaultReplyForNoor.ifBlank {
+            request.template.getSampleSlotValue("hi")
+        }
+        mutableStateOf(defaultText)
+    }
 
     Card(
         shape = RoundedCornerShape(16.dp),
@@ -271,14 +276,26 @@ private fun NoorInlineTier2Card(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Suggestions
+            // Suggestions in Hindi for Noor
             val suggestions = when (request.slotKey) {
-                "tour_price_inr" -> listOf("500", "750", "1000")
-                "opening_hours" -> listOf("सुबह 9 से शाम 6 बजे", "सुबह 8 से शाम 5 बजे")
+                "tour_price_inr" -> listOf("₹500 प्रति व्यक्ति", "₹750 प्रति व्यक्ति", "₹1000 प्रति व्यक्ति")
+                "opening_hours" -> listOf("सुबह 9:00 से शाम 6:00 बजे", "सुबह 8:30 से शाम 5:30 बजे (सोमवार बंद)")
+                "pet_policy_rules" -> listOf("पट्टे पर बंधे कुत्तों का स्वागत है", "पालतू जानवरों की अनुमति नहीं है")
+                "booking_requirements" -> listOf("24 घंटे पहले अग्रिम बुकिंग आवश्यक", "बिना बुकिंग सीधे आ सकते हैं")
+                "farm_activities" -> listOf("कॉफी बीन चुनना और टेस्टिंग", "फार्म वॉक और नेचर ट्रेल")
+                "amenities_food_info" -> listOf("ताज़ी कॉफी, भोजन और शौचालय", "पीने का पानी और विश्राम शेड")
+                "produce_pricing_info" -> listOf("भुनी कॉफी ₹450, शहद ₹350", "ऑर्गेनिक कॉफी ₹500/पैकेट")
+                "location_directions" -> listOf("हाईवे से 5 किमी, लोटस विलेज के पास", "वैली रिज रोड, जिला शहर से 12 किमी")
+                "tour_duration_difficulty_info" -> listOf("1.5 से 2 घंटे की आसान वॉक", "1 घंटा, मध्यम चढ़ाई")
                 else -> emptyList()
             }
             if (suggestions.isNotEmpty()) {
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .horizontalScroll(rememberScrollState()),
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
                     suggestions.forEach { s ->
                         SuggestionChip(
                             onClick = { valueInput = s },
@@ -296,8 +313,9 @@ private fun NoorInlineTier2Card(
                 OutlinedTextField(
                     value = valueInput,
                     onValueChange = { valueInput = it },
-                    placeholder = { Text("जैसे: ₹500") },
-                    singleLine = true,
+                    placeholder = { Text("नूर का उत्तर (हिंदी में)...") },
+                    singleLine = false,
+                    maxLines = 3,
                     modifier = Modifier.weight(1f),
                     shape = RoundedCornerShape(12.dp)
                 )
