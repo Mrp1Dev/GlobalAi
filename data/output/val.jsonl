@@ -1,0 +1,82 @@
+{"intent": "tour_duration_difficulty", "lang": "es", "text": "¿cuánto dura el tour?", "label": 8}
+{"intent": "activities_available", "lang": "en", "text": "can we do cupping and bird watching in one day", "label": 0}
+{"intent": "price_produce", "lang": "hi", "text": "क्या हम थोक में मकई और बीन्स खरीद सकते हैं?", "label": 6}
+{"intent": "amenities_food", "lang": "es", "text": "¿El almuerzo está incluido en el tour?", "label": 1}
+{"intent": "activities_available", "lang": "fr", "text": "On peut cueillir les cerises de café ?", "label": 0}
+{"intent": "pet_policy", "lang": "fr", "text": "Y a-t-il un espace pour que mon chien se repose pendant que je fais la dégustation ?", "label": 5}
+{"intent": "price_tour", "lang": "nl", "text": "Zijn er familiekortingen voor de rondleiding?", "label": 7}
+{"intent": "activities_available", "lang": "de", "text": "Wir sind eine Gruppe von 10 Personen, müssen wir vorher reservieren?", "label": 0}
+{"intent": "visitation_hours", "lang": "pt", "text": "Podemos visitar a fazenda no sábado?", "label": 9}
+{"intent": "out_of_scope", "lang": "es", "text": "hola podemos visitar esta tarde para degustación de café", "label": 4}
+{"intent": "price_tour", "lang": "pt", "text": "Olá, qual é o preço por pessoa para a caminhada pelo cafezal?", "label": 7}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿hay partes muy empinadas en el camino a la finca?", "label": 3}
+{"intent": "price_tour", "lang": "it", "text": "Quanto costa il tour della piantagione?", "label": 7}
+{"intent": "visitation_hours", "lang": "hi", "text": "क्या समूहों के लिए अलग समय है? हम 20 बच्चों के साथ स्कूल से आ रहे हैं।", "label": 9}
+{"intent": "price_produce", "lang": "pt", "text": "meu pai tem dificuldade para andar, podemos comprar café sem fazer a trilha?", "label": 6}
+{"intent": "booking_reservation", "lang": "it", "text": "Avete un'esperienza di cupping con diverse varietà di Arabica?", "label": 2}
+{"intent": "visitation_hours", "lang": "nl", "text": "Is de boerderij open op feestdagen?", "label": 9}
+{"intent": "out_of_scope", "lang": "it", "text": "chi ha vinto la partita di ieri sera", "label": 4}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Est-ce que le lavage du café est visible lors de la visite ?", "label": 3}
+{"intent": "pet_policy", "lang": "es", "text": "¿podemos llevar a nuestro gato con arnés", "label": 5}
+{"intent": "tour_duration_difficulty", "lang": "it", "text": "offrite una sessione di cupping con diverse tostature?", "label": 8}
+{"intent": "out_of_scope", "lang": "hi", "text": "शहर में कोई अच्छा होटल बता सकते हैं?", "label": 4}
+{"intent": "price_tour", "lang": "fr", "text": "est-ce que le prix de la visite est le même en haute saison", "label": 7}
+{"intent": "out_of_scope", "lang": "fr", "text": "est-ce que la pharmacie est ouverte aujourd'hui", "label": 4}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Hoe kom ik bij de boerderij vanaf het centrum?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "क्या बच्चों के लिए खेत तक चलना आसान है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "how do I get to the farm from the district town?", "label": 3}
+{"intent": "price_tour", "lang": "en", "text": "Can you tell me the cost for a private tour for my family?", "label": 7}
+{"intent": "activities_available", "lang": "nl", "text": "Hoe lang duurt de vogelspottocht en is het geschikt voor ouderen?", "label": 0}
+{"intent": "visitation_hours", "lang": "es", "text": "¿podemos visitar a las 5 de la tarde o es muy tarde?", "label": 9}
+{"intent": "farm_location_directions", "lang": "it", "text": "posso arrivare con i mezzi pubblici?", "label": 3}
+{"intent": "price_produce", "lang": "it", "text": "posso comprare dei chicchi verdi da portare a casa?", "label": 6}
+{"intent": "pet_policy", "lang": "hi", "text": "हमारे पास छोटा कुत्ता है, क्या वह टूर में शामिल हो सकता है?", "label": 5}
+{"intent": "price_tour", "lang": "es", "text": "Hola, me gustaría saber los precios de las entradas para el tour este fin de semana.", "label": 7}
+{"intent": "visitation_hours", "lang": "fr", "text": "On peut visiter le moulin à café samedi matin ?", "label": 9}
+{"intent": "pet_policy", "lang": "it", "text": "vorrei venire con il mio labrador, è un problema?", "label": 5}
+{"intent": "amenities_food", "lang": "nl", "text": "Is het drinkwater uit de bron veilig om te drinken?", "label": 1}
+{"intent": "price_produce", "lang": "nl", "text": "Ik hoorde dat jullie biologische producten verkopen, wat zijn de actuele prijzen?", "label": 6}
+{"intent": "tour_duration_difficulty", "lang": "en", "text": "we're a group of six, can we book a private tour with a moderate pace?", "label": 8}
+{"intent": "booking_reservation", "lang": "de", "text": "Hi, können wir heute Nachmittag zur Kaffee-Verkostung vorbeikommen?", "label": 2}
+{"intent": "price_produce", "lang": "fr", "text": "Est-ce qu'on peut acheter du miel de la forêt directement à la ferme ?", "label": 6}
+{"intent": "visitation_hours", "lang": "de", "text": "Können wir nachmittags vorbeikommen?", "label": 9}
+{"intent": "pet_policy", "lang": "de", "text": "Gibt es für die Sicherheit der Tiere verbotene Zonen?", "label": 5}
+{"intent": "out_of_scope", "lang": "de", "text": "wo ist die Post", "label": 4}
+{"intent": "price_tour", "lang": "hi", "text": "हमारे साथ दो बच्चे हैं, क्या वे कॉफ़ी ट्रेल पर चल सकते हैं?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "kann man vor Ort bezahlen oder muss man online buchen", "label": 7}
+{"intent": "tour_duration_difficulty", "lang": "nl", "text": "We hebben twee kinderen van 6 en 9, kunnen zij het hele traject aan?", "label": 8}
+{"intent": "tour_duration_difficulty", "lang": "pt", "text": "posso comprar os grãos diretamente da fazenda?", "label": 8}
+{"intent": "amenities_food", "lang": "pt", "text": "qual é a distância da trilha do café?", "label": 1}
+{"intent": "pet_policy", "lang": "en", "text": "are dogs allowed inside the cafe or just outside", "label": 5}
+{"intent": "booking_reservation", "lang": "nl", "text": "Hoe lang van tevoren moeten we een boeking plaatsen voor het proeven van jullie single-origin arabica?", "label": 2}
+{"intent": "activities_available", "lang": "es", "text": "¿es empinado el sendero para un caminante casual", "label": 0}
+{"intent": "pet_policy", "lang": "nl", "text": "Kunnen we onze hond meenemen tijdens de wandeling over het koffiepad?", "label": 5}
+{"intent": "farm_location_directions", "lang": "de", "text": "Hält der Bus in der Nähe des Eingangs?", "label": 3}
+{"intent": "activities_available", "lang": "hi", "text": "क्या यहाँ कॉफ़ी बीन्स तोड़ सकते हैं?", "label": 0}
+{"intent": "amenities_food", "lang": "de", "text": "Gibt es frisch gebrühten Kaffee?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "ciao possiamo venire oggi pomeriggio per la degustazione", "label": 1}
+{"intent": "out_of_scope", "lang": "pt", "text": "existe um supermercado aqui perto que venda água e lanches", "label": 4}
+{"intent": "visitation_hours", "lang": "it", "text": "A che ora chiudete il pomeriggio?", "label": 9}
+{"intent": "tour_duration_difficulty", "lang": "hi", "text": "क्या ढलान पर बुजुर्गों के लिए खतरनाक हिस्से हैं?", "label": 8}
+{"intent": "farm_location_directions", "lang": "hi", "text": "मैं जानना चाहता हूँ कि क्या खेत सार्वजनिक परिवहन से आसानी से पहुँचा जा सकता है।", "label": 3}
+{"intent": "tour_duration_difficulty", "lang": "de", "text": "Ist der Anstieg für ältere Leute machbar?", "label": 8}
+{"intent": "tour_duration_difficulty", "lang": "fr", "text": "On a deux enfants, est-ce qu'ils peuvent marcher sur le sentier du café ?", "label": 8}
+{"intent": "booking_reservation", "lang": "en", "text": "do you have a washing mill we can see", "label": 2}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Is er parkeergelegenheid bij de boerderij?", "label": 3}
+{"intent": "booking_reservation", "lang": "hi", "text": "सिंगल-ओरिजिन अरेबिका टेस्टिंग के लिए कितने दिन पहले बुक करना होगा?", "label": 2}
+{"intent": "price_produce", "lang": "es", "text": "¿tienen miel del bosque y a qué precio?", "label": 6}
+{"intent": "booking_reservation", "lang": "fr", "text": "Bonjour, est-ce qu'on peut réserver une visite pour demain après-midi ?", "label": 2}
+{"intent": "amenities_food", "lang": "fr", "text": "Proposez-vous des séances de dégustation de café pour les connaisseurs ?", "label": 1}
+{"intent": "booking_reservation", "lang": "es", "text": "¿hacen sesiones de cata de diferentes tuestes?", "label": 2}
+{"intent": "pet_policy", "lang": "pt", "text": "tem cercados para animais na fazenda?", "label": 5}
+{"intent": "amenities_food", "lang": "en", "text": "Do you have clean restrooms on the farm?", "label": 1}
+{"intent": "farm_location_directions", "lang": "pt", "text": "preciso de um carro 4x4 para chegar à fazenda?", "label": 3}
+{"intent": "price_produce", "lang": "en", "text": "do you ship roasted coffee or is it pickup only", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Hi, verkauft ihr auch ungeröstete Bohnen?", "label": 6}
+{"intent": "visitation_hours", "lang": "en", "text": "when does the farm close", "label": 9}
+{"intent": "out_of_scope", "lang": "nl", "text": "Is er een supermarkt open op zondag?", "label": 4}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या लंच में शाकाहारी विकल्प हैं?", "label": 1}
+{"intent": "activities_available", "lang": "pt", "text": "Podemos visitar a fazenda esta tarde?", "label": 0}
+{"intent": "booking_reservation", "lang": "pt", "text": "ola podemos visitar esta tarde para uma prova de café", "label": 2}
+{"intent": "out_of_scope", "lang": "en", "text": "is there a hospital nearby", "label": 4}
+{"intent": "activities_available", "lang": "it", "text": "Offrite una sessione di assaggio del caffè?", "label": 0}

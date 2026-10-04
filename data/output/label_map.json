@@ -1,0 +1,27 @@
+{
+  "label_to_id": {
+    "activities_available": 0,
+    "amenities_food": 1,
+    "booking_reservation": 2,
+    "farm_location_directions": 3,
+    "out_of_scope": 4,
+    "pet_policy": 5,
+    "price_produce": 6,
+    "price_tour": 7,
+    "tour_duration_difficulty": 8,
+    "visitation_hours": 9
+  },
+  "id_to_label": {
+    "0": "activities_available",
+    "1": "amenities_food",
+    "2": "booking_reservation",
+    "3": "farm_location_directions",
+    "4": "out_of_scope",
+    "5": "pet_policy",
+    "6": "price_produce",
+    "7": "price_tour",
+    "8": "tour_duration_difficulty",
+    "9": "visitation_hours"
+  },
+  "num_labels": 10
+}

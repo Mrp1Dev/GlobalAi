@@ -1,0 +1,276 @@
+{
+  "version": "2.0.0",
+  "domain": "farm_tourism_highland_coffee",
+  "supported_languages": {
+    "en": "English",
+    "es": "Spanish (Español)",
+    "fr": "French (Français)",
+    "de": "German (Deutsch)",
+    "it": "Italian (Italiano)",
+    "hi": "Hindi (हिन्दी)",
+    "pt": "Portuguese (Português)",
+    "nl": "Dutch (Nederlands)"
+  },
+  "intents": [
+    {
+      "intent": "price_tour",
+      "slot_key": "tour_price_inr",
+      "description": "Inquiries regarding tour pricing, ticket costs, student/child discounts, family packages, and per-person rates for the coffee farm walk.",
+      "noor_prompt_template": {
+        "hi": "कृपया टूर की कीमत बताएं, प्रति व्यक्ति कितने रुपये है?"
+      },
+      "default_reply_template": "Our coffee farm walk is {tour_price_inr} per person, including a guided tour and tasting session.",
+      "sample_slot_value": "500 rs",
+      "reply_template_variations": [
+        "Our coffee farm walk is {tour_price_inr} per person, including a guided tour and tasting session.",
+        "The standard tour price is {tour_price_inr}, and we offer a 50% discount for children under 12.",
+        "For a family of four, the total comes to {tour_price_inr} for two adults and two kids, with the kids' tickets half price.",
+        "You can join the morning walk for {tour_price_inr}, which covers the upper Arabica slopes and our lower bean fields.",
+        "The per-person rate is {tour_price_inr}, but if you're a student, just show your ID and you'll get a 20% off that price.",
+        "We charge {tour_price_inr} for the full walk, and that includes a small bag of our fresh-roasted coffee to take home."
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "कृपया टूर की कीमत बताएं, प्रति व्यक्ति कितने रुपये है?",
+          "क्या आप टूर प्राइस इनरुपीस में बता सकते हैं? हमें स्लॉट भरना है।",
+          "एक व्यक्ति के लिए कॉफी फार्म वॉक का किराया क्या है?",
+          "कृपया टूर की दर (प्रति व्यक्ति) बताएं ताकि हम इसे अपने रिकॉर्ड में दर्ज कर सकें।"
+        ]
+      }
+    },
+    {
+      "intent": "price_produce",
+      "slot_key": "produce_pricing_info",
+      "description": "Inquiries regarding purchasing farm-fresh roasted coffee beans, unroasted green parchment, highland forest honey, maize, and organic beans.",
+      "noor_prompt_template": {
+        "hi": "कृपया हमारे खेत के उत्पादों (भुनी हुई कॉफी, हरी कॉफी, जंगली शहद, मक्का, जैविक बीन्स) की कीमतें बताएं।"
+      },
+      "default_reply_template": "Welcome to our highland farm! For your purchase, here's what we have: {produce_pricing_info}.",
+      "sample_slot_value": "Roasted Arabica coffee is ₹450/250g, unroasted green parchment is ₹300/kg, wild forest honey is ₹350/jar, maize is ₹50/kg, and organic beans are ₹120/kg.",
+      "reply_template_variations": [
+        "Welcome to our highland farm! For your purchase, here's what we have: {produce_pricing_info}.",
+        "If you're thinking of taking some of our produce home, {produce_pricing_info}.",
+        "Our produce is fresh from the farm, and the prices are as follows: {produce_pricing_info}.",
+        "For your convenience, here are the current prices for our farm products: {produce_pricing_info}.",
+        "I'd be happy to help you with our produce prices. {produce_pricing_info}.",
+        "Before you decide, let me share our price list: {produce_pricing_info}."
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "कृपया हमारे खेत के उत्पादों (भुनी हुई कॉफी, हरी कॉफी, जंगली शहद, मक्का, जैविक बीन्स) की कीमतें बताएं।",
+          "क्या आप हमारे खेत के ताज़ा उत्पादों की कीमतों की जानकारी दे सकते हैं?",
+          "हमारे खेत से खरीदने के लिए कॉफी, शहद और बीन्स की कीमतें क्या हैं?",
+          "कृपया हमारे उत्पादों की मौजूदा कीमतें साझा करें, जैसे भुनी हुई कॉफी और शहद।"
+        ]
+      }
+    },
+    {
+      "intent": "visitation_hours",
+      "slot_key": "opening_hours",
+      "description": "Opening and closing times, operating days of the week, harvest season schedule, and holiday visiting hours.",
+      "noor_prompt_template": {
+        "hi": "कृपया बताइए, आपके खेत के खुलने और बंद होने का समय क्या है?"
+      },
+      "default_reply_template": "You're welcome to visit us {opening_hours}, and I'd love to show you around the coffee terraces.",
+      "sample_slot_value": "8:30 AM to 5:30 PM (Tuesday to Sunday, closed Mondays for harvesting)",
+      "reply_template_variations": [
+        "You're welcome to visit us {opening_hours}, and I'd love to show you around the coffee terraces.",
+        "Our farm gates are open {opening_hours}, so you can plan your visit around the best morning light.",
+        "Please note that we operate {opening_hours}, and the last tour usually starts an hour before closing.",
+        "If you're coming from town, just remember we're open {opening_hours}, with plenty of time for a coffee tasting.",
+        "We keep things flexible here, but our standard hours are {opening_hours}, so you can arrive whenever suits you.",
+        "For a quieter experience, try visiting on a weekday—we're open {opening_hours} and the mornings are especially peaceful."
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "कृपया बताइए, आपके खेत के खुलने और बंद होने का समय क्या है?",
+          "हमें आने का समय जानना है—कृपया बताएं कि आपका खेत कितने बजे खुलता और बंद होता है?",
+          "क्या आप कृपया अपने खेत के खुलने के दिन और समय बता सकते हैं?",
+          "मुझे आपके खेत के विज़िटिंग आवर्स चाहिए—कृपया सिर्फ़ समय और दिन बताएं।"
+        ]
+      }
+    },
+    {
+      "intent": "tour_duration_difficulty",
+      "slot_key": "tour_duration_difficulty_info",
+      "description": "Tour duration in hours, walking trail conditions, hill slope steepness, physical fitness requirements, and accessibility for kids/seniors.",
+      "noor_prompt_template": {
+        "hi": "कृपया बताइए, इस टूर की अवधि कितनी है और रास्ता कैसा है?"
+      },
+      "default_reply_template": "Our coffee trail tour takes about {tour_duration_difficulty_info}, so you'll have plenty of time to soak in the views.",
+      "sample_slot_value": "1.5 to 2 hours along gentle highland coffee trails; comfortable walking shoes and light rain jackets are recommended",
+      "reply_template_variations": [
+        "Our coffee trail tour takes about {tour_duration_difficulty_info}, so you'll have plenty of time to soak in the views.",
+        "You're welcome to join the walk—it's {tour_duration_difficulty_info}, and we take it at a relaxed pace.",
+        "For your planning, the tour is {tour_duration_difficulty_info}, and I'll point out the best spots along the way.",
+        "The trail is lovely and not too strenuous—{tour_duration_difficulty_info}—perfect for a morning adventure.",
+        "Just so you know, the walk is {tour_duration_difficulty_info}, and I'll make sure we stop for photos and rest breaks.",
+        "If you're wondering about the walk, it's {tour_duration_difficulty_info}, and I'm happy to adjust the pace for you."
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "कृपया बताइए, इस टूर की अवधि कितनी है और रास्ता कैसा है?",
+          "क्या आप बता सकते हैं कि यह टूर कितने घंटे का है और चलने में कितनी मुश्किल है?",
+          "टूर की अवधि और रास्ते की ढलान के बारे में जानकारी दीजिए।",
+          "कृपया बताइए कि यह टूर कितने समय का है और क्या यह बच्चों या बुजुर्गों के लिए आसान है?"
+        ]
+      }
+    },
+    {
+      "intent": "farm_location_directions",
+      "slot_key": "location_directions",
+      "description": "Directions to the highland farm from the district town, mountain road conditions, 4WD recommendations, public bus/taxi access, and on-site parking.",
+      "noor_prompt_template": {
+        "hi": "क्या आप मुझे अपने खेत तक पहुँचने के लिए सटीक दिशा-निर्देश बता सकते हैं?"
+      },
+      "default_reply_template": "You'll find us in the {location_directions} — just follow the coffee signs once you leave the main road.",
+      "sample_slot_value": "Ondera Highlands, 12 km from district town along Valley Ridge Road; parking is free on site",
+      "reply_template_variations": [
+        "You'll find us in the {location_directions} — just follow the coffee signs once you leave the main road.",
+        "Head toward the {location_directions}, and you'll see our farm gate on the left after the big eucalyptus tree.",
+        "The drive is a bit winding, but the {location_directions} are well-marked and worth every turn.",
+        "For the smoothest trip, aim for the {location_directions} and take it slow on the gravel stretch — a 4WD helps after rain.",
+        "If you're coming by public bus, get off at the junction and take a shared taxi to the {location_directions} — it's about 15 minutes from there.",
+        "Once you reach the {location_directions}, you can park right by the drying beds; there's always space for our guests."
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "क्या आप मुझे अपने खेत तक पहुँचने के लिए सटीक दिशा-निर्देश बता सकते हैं?",
+          "जिला शहर से आपके खेत तक कैसे पहुँचा जा सकता है? मार्ग और दूरी क्या है?",
+          "कृपया बताएं कि आपका खेत कहाँ स्थित है और वहाँ पहुँचने का रास्ता क्या है?",
+          "आपके खेत तक पहुँचने के लिए कौन सा रास्ता सबसे अच्छा है, और क्या वहाँ पार्किंग उपलब्ध है?"
+        ]
+      }
+    },
+    {
+      "intent": "activities_available",
+      "slot_key": "farm_activities",
+      "description": "Activities offered: red cherry picking, coffee wet-mill pulping and sun-drying demonstration, sensory cupping session, and highland bird watching.",
+      "noor_prompt_template": {
+        "hi": "क्या आप कृपया बता सकते हैं कि फार्म पर कौन-कौन सी गतिविधियाँ उपलब्ध हैं?"
+      },
+      "default_reply_template": "Welcome to our highland farm! Here, you can enjoy {farm_activities}.",
+      "sample_slot_value": "coffee harvesting walks, pulping mill demonstrations, artisanal cupping sessions, and guided highland nature trails",
+      "reply_template_variations": [
+        "Welcome to our highland farm! Here, you can enjoy {farm_activities}.",
+        "We offer a range of experiences including {farm_activities}.",
+        "Guests often love our {farm_activities} — perfect for a day in the highlands.",
+        "For a full morning, I suggest trying our {farm_activities}.",
+        "If you're curious about coffee, our {farm_activities} are a great way to dive in.",
+        "Feel free to ask about {farm_activities} — they're our specialty!"
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "क्या आप कृपया बता सकते हैं कि फार्म पर कौन-कौन सी गतिविधियाँ उपलब्ध हैं?",
+          "मुझे फार्म की गतिविधियों की सूची चाहिए। क्या आप बता सकते हैं?",
+          "कृपया फार्म पर होने वाली गतिविधियों के बारे में बताएं।",
+          "फार्म पर पर्यटकों के लिए कौन-कौन सी गतिविधियाँ हैं?"
+        ]
+      }
+    },
+    {
+      "intent": "amenities_food",
+      "slot_key": "amenities_food_info",
+      "description": "On-farm guest amenities: local traditional highland lunch, freshly brewed coffee and tea, clean washrooms, rest shelters, and potable spring water.",
+      "noor_prompt_template": {
+        "hi": "कृपया बताएं, खेत पर मेहमानों के लिए कौन-कौन सी सुविधाएं उपलब्ध हैं? (जैसे भोजन, पेय, शौचालय, पानी)"
+      },
+      "default_reply_template": "Welcome! On the farm, you can enjoy {amenities_food_info} while soaking in the mountain views.",
+      "sample_slot_value": "freshly brewed single-origin coffee, traditional highland bean lunch, clean western-style restrooms, and spring drinking water",
+      "reply_template_variations": [
+        "Welcome! On the farm, you can enjoy {amenities_food_info} while soaking in the mountain views.",
+        "We offer {amenities_food_info} for all our guests—just ask at the main hut.",
+        "For your comfort, we've arranged {amenities_food_info} near the walking trails.",
+        "Feel free to help yourself to {amenities_food_info} anytime during your visit.",
+        "Our farm provides {amenities_food_info} to make your stay pleasant and refreshing.",
+        "After the tour, you're welcome to relax with {amenities_food_info} under the shade."
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "कृपया बताएं, खेत पर मेहमानों के लिए कौन-कौन सी सुविधाएं उपलब्ध हैं? (जैसे भोजन, पेय, शौचालय, पानी)",
+          "खेत की सुविधाओं की जानकारी दें—खाने-पीने और आराम की क्या व्यवस्था है?",
+          "क्या आप खेत पर उपलब्ध सुविधाओं की सूची बता सकते हैं, जैसे लंच, कॉफी, पानी, और शौचालय?",
+          "मेहमानों के लिए खेत पर कौन-सी सुविधाएं हैं, कृपया संक्षेप में बताएं?"
+        ]
+      }
+    },
+    {
+      "intent": "pet_policy",
+      "slot_key": "pet_policy_rules",
+      "description": "Policy regarding bringing dogs and companion animals to the farm, leash rules on working agricultural trails, and domestic pet safety.",
+      "noor_prompt_template": {
+        "hi": "कृपया बताएं, हमारे खेत में पालतू जानवरों के लिए क्या नियम हैं, जैसे कुत्तों के लिए पट्टा या अन्य प्रतिबंध?"
+      },
+      "default_reply_template": "Our pet policy is straightforward: {pet_policy_rules}, so you can enjoy the trail with your furry friend while we keep the coffee safe.",
+      "sample_slot_value": "well-behaved dogs on leashes are welcome on the outdoor trails; pets are restricted from the coffee drying tables",
+      "reply_template_variations": [
+        "Our pet policy is straightforward: {pet_policy_rules}, so you can enjoy the trail with your furry friend while we keep the coffee safe.",
+        "Just so you know, {pet_policy_rules}, which keeps both your pet and our harvest happy.",
+        "For your visit, please remember that {pet_policy_rules} – it's the best way to enjoy the farm together.",
+        "Before you come, here's what you need to know: {pet_policy_rules}. We're happy to have well-behaved pets join you!",
+        "A quick note on pets: {pet_policy_rules}. That way, everyone has a safe and pleasant time on the farm.",
+        "When you arrive, keep in mind that {pet_policy_rules}. We love our animal visitors, and this keeps them safe."
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "कृपया बताएं, हमारे खेत में पालतू जानवरों के लिए क्या नियम हैं, जैसे कुत्तों के लिए पट्टा या अन्य प्रतिबंध?",
+          "क्या आप बता सकते हैं कि खेत की यात्रा के दौरान पालतू जानवरों के साथ क्या नियम लागू होते हैं?",
+          "हमारे खेत में पालतू जानवरों के लिए विशेष दिशानिर्देश क्या हैं, जैसे कौन से क्षेत्रों में प्रवेश वर्जित है?",
+          "कृपया पालतू जानवरों की नीति के बारे में जानकारी दें, जिसमें पट्टा और प्रतिबंधित स्थान शामिल हों।"
+        ]
+      }
+    },
+    {
+      "intent": "booking_reservation",
+      "slot_key": "booking_requirements",
+      "description": "Advance reservation policy vs spontaneous walk-ins, maximum group size (e.g. 8 people), and notice required for tasting and lunch.",
+      "noor_prompt_template": {
+        "hi": "कृपया बताएं, बुकिंग के लिए क्या नियम हैं?"
+      },
+      "default_reply_template": "Hello, welcome to the farm! For our guided tours and farm lunch, we kindly ask for {booking_requirements}.",
+      "sample_slot_value": "advance notice of at least 24 hours is required for guided tours and farm lunch; walk-ins may self-walk outer trails",
+      "reply_template_variations": [
+        "Hello, welcome to the farm! For our guided tours and farm lunch, we kindly ask for {booking_requirements}.",
+        "We'd love to have you join us! Just a heads-up: {booking_requirements}.",
+        "To make sure everything's ready for your visit, please note that {booking_requirements}.",
+        "If you're planning a tour or lunch with us, remember {booking_requirements}. Walk-ins are welcome to explore the outer trails on their own anytime.",
+        "For the best experience, {booking_requirements}. We look forward to hosting you!",
+        "A quick note on bookings: {booking_requirements}. Feel free to reach out with any questions!"
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "कृपया बताएं, बुकिंग के लिए क्या नियम हैं?",
+          "क्या अग्रिम बुकिंग आवश्यक है? कृपया विवरण दें।",
+          "बुकिंग के लिए कितने समय पहले सूचित करना होता है?",
+          "कृपया बुकिंग की शर्तें बताएं, जैसे कि समय सीमा और समूह का आकार।"
+        ]
+      }
+    },
+    {
+      "intent": "out_of_scope",
+      "slot_key": "none",
+      "description": "Queries outside farm scope (weather forecasts, town hotels, banking/ATMs, local politics, flights, personal chitchat) which route directly to Noor via Tier 3 translation.",
+      "noor_prompt_template": {
+        "hi": "क्या आप मुझे बता सकते हैं कि यह जानकारी कहाँ से मिलेगी?"
+      },
+      "default_reply_template": "I'm sorry, I don't have that information here, but I'd be happy to help you with farm tours, coffee tasting, or anything about our highland life.",
+      "sample_slot_value": "",
+      "reply_template_variations": [
+        "I'm sorry, I don't have that information here, but I'd be happy to help you with farm tours, coffee tasting, or anything about our highland life.",
+        "That's outside what I usually share with guests, but if you need a hand with something farm-related, just ask!",
+        "I'm not the right person for that, but I can tell you all about our coffee, the trails, or the local crops if you're interested.",
+        "I don't keep track of that, but I'm always glad to chat about our farm or point you to someone who might know.",
+        "That's a bit beyond my farm knowledge, but let's focus on your visit here—would you like to see the coffee terraces or the mill?",
+        "I'm not sure about that, but I can help you with directions on the farm or details about our tours."
+      ],
+      "noor_prompt_variations": {
+        "hi": [
+          "क्या आप मुझे बता सकते हैं कि यह जानकारी कहाँ से मिलेगी?",
+          "क्या आप इस बारे में कुछ जानते हैं?",
+          "कृपया मुझे सही जानकारी देने में मदद करें।",
+          "क्या आप मुझे इस विषय पर कुछ बता सकते हैं?"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "total_samples": 1222,
+  "train_samples": 976,
+  "val_samples": 82,
+  "test_samples": 164,
+  "intents_distribution": {
+    "price_tour": 120,
+    "price_produce": 120,
+    "visitation_hours": 120,
+    "tour_duration_difficulty": 120,
+    "farm_location_directions": 140,
+    "activities_available": 120,
+    "amenities_food": 120,
+    "pet_policy": 120,
+    "booking_reservation": 122,
+    "out_of_scope": 120
+  },
+  "languages_distribution": {
+    "it": 151,
+    "pt": 151,
+    "fr": 150,
+    "de": 150,
+    "en": 150,
+    "es": 150,
+    "nl": 160,
+    "hi": 160
+  }
+}

@@ -1,0 +1,840 @@
+{"intent": "price_tour", "lang": "en", "text": "How much does a guided farm tour cost?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "What is the entrance fee for the farm visit?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "Are there ticket discounts for children and students?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "How much per person for the agricultural tour?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "Can you tell me the price of the weekend walking tour?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "What does a family tour package cost?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "Is the farm tour free or do we need tickets?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "How much are you charging for groups of five?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "Hola, ¿cuánto cuesta el tour guiado por la granja?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Cuál es el precio de la entrada por persona?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Hay tarifas reducidas para niños o estudiantes?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Cuánto sale la visita a los campos de cultivo?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Tienen paquetes familiares y cuál es su costo?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Cuánto cobran por el recorrido completo de la granja?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Hay que pagar entrada para entrar a la finca?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Bonjour, quel est le tarif pour visiter la ferme?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Combien coûte une visite guidée pour deux adultes?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Quel est le prix du billet d'entrée?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Y a-t-il un tarif de groupe ou un tarif enfant?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Combien coûte la découverte de l'exploitation agricole?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Pouvez-vous m'indiquer le prix de la promenade guidée?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Wie viel kostet eine Führung auf dem Bauernhof?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Was kostet der Eintritt pro Person für die Farm?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Gibt es Ermäßigungen für Familien oder Kinder?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Wie hoch sind die Ticketpreise für den Rundgang?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Was verlangen Sie für eine Führung durch die Plantage?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Ist die Besichtigung kostenpflichtig?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Quanto costa il tour guidato della fattoria?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Qual è il prezzo del biglietto d'ingresso a persona?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Ci sono sconti per famiglie con bambini?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Quanto si paga per visitare i campi e la stalla?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Quali sono le tariffe per il tour pomeridiano?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "फार्म टूर की टिकट कितने की है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "खेत में घूमने का प्रति व्यक्ति कितना खर्चा आएगा?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "क्या बच्चों के लिए टिकट में कोई छूट है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "टूर का किराया कितना है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "पूरे खेत के गाइडेड टूर की फीस क्या है?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "Quanto custa o passeio guiado pela fazenda?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "Qual é o valor da entrada por pessoa?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "Tem desconto para crianças na visita à fazenda?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "Quanto vocês cobram pelo roteiro turístico rural?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Hoeveel kost een rondleiding over de boerderij?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Wat is de toegangsprijs per persoon?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Zijn er groepskortingen voor het boerderijbezoek?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Wat zijn de tarieven voor een bezoek met het gezin?", "label": 7}
+{"intent": "price_produce", "lang": "en", "text": "How much do fresh organic mangoes cost per kilo?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "What is the price of fresh raw cow milk?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "Do you sell organic honey and how much is a jar?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "Can we buy seasonal vegetables directly from the farm?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "What are your prices for farm-fresh eggs?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "How much for a basket of freshly harvested fruits?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "Do you sell home-made spices and pickles here?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿A qué precio venden la miel orgánica fresca?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿Cuánto cuestan las frutas de temporada por kilo?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿Venden leche fresca de vaca y cuál es su costo?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿Podemos comprar verduras ecológicas directamente del huerto?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿Cuánto sale una canasta de huevos de campo?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿Tienen mermeladas caseras para comprar?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "Combien coûte le pot de miel bio de votre ferme?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "Quel est le prix au kilo pour les fruits frais?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "Vendez-vous du lait frais de vache et à quel tarif?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "Peut-on acheter des légumes cultivés sans pesticides sur place?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "Combien vendez-vous les œufs fermiers?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Was kostet ein Glas frischer Bio-Honig bei Ihnen?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Wie viel kostet frisches Obst pro Kilo direkt vom Baum?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Verkaufen Sie frische Rohmilch und Hofprodukte?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Kann man feldfrisches Gemüse im Hofladen erwerben?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Wie teuer sind die frischen Eier von freilaufenden Hühnern?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Quanto costa il miele biologico prodotto in fattoria?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Quali sono i prezzi per le verdure e la frutta di stagione?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Vendete latte fresco appena munto?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Possiamo acquistare prodotti agricoli a chilometro zero?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Quanto costa una confezione di uova fresche?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "खेत का ताजा शहद कितने रुपये किलो है?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "क्या हम यहाँ से ताजी जैविक सब्जियां खरीद सकते हैं?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "ताजे गाय के दूध का क्या भाव है?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "मौसमी फलों की कीमत क्या रखी गई है?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "देसी अंडे और घर का बना अचार कितने में मिलेगा?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Quanto custa o pote de mel orgânico da fazenda?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Qual é o preço do quilo das frutas colhidas na hora?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Vocês vendem leite fresco de vaca e ovos caipiras?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Posso comprar hortaliças e legumes diretamente aqui?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Wat kost een pot verse biologische honing?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Hoeveel kost het seizoensfruit per kilo?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Verkopen jullie verse melk en eieren van de boerderij?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Kunnen we verse groenten direct van het veld kopen?", "label": 6}
+{"intent": "visitation_hours", "lang": "en", "text": "What time does the farm open and close?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "Can we visit the farm tomorrow morning at 10 AM?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "What are your public visiting hours on weekends?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "Are you open on Sundays and public holidays?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "When is the best time of day to take a tour?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "Until what time can visitors enter in the evening?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿A qué hora abre y cierra la granja?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿Cuáles son los horarios de visita los fines de semana?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿Está abierta la finca los domingos y días festivos?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿Podemos llegar a las diez de la mañana para el recorrido?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿Cuál es la última hora de ingreso por la tarde?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "À quelle heure la ferme ouvre-t-elle le matin?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "Quels sont les horaires d'ouverture le week-end?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "La ferme est-elle ouverte au public les jours fériés?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "Jusqu'à quelle heure peut-on faire la visite le soir?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Wie sind die Öffnungszeiten des Bauernhofs?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Wann öffnet die Farm am Wochenende für Besucher?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Haben Sie auch an Feiertagen und sonntags geöffnet?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Bis wie viel Uhr darf man abends auf dem Hof bleiben?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "Quali sono gli orari di apertura e chiusura della fattoria?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "A che ora iniziano le visite guidate la mattina?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "Siete aperti la domenica e nei giorni festivi?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "Fino a che ora possiamo entrare nel pomeriggio?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "खेत पर्यटकों के लिए कितने बजे खुलता है?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "क्या रविवार को फार्म खुला रहता है?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "शाम को खेत किस समय बंद होता है?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "आने का सबसे अच्छा समय क्या है?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "Quais são os horários de funcionamento da fazenda?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "A fazenda abre aos sábados e domingos?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "A que horas abre para visitas pela manhã?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "Wat zijn de openingstijden van de boerderij?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "Is de boerderij in het weekend open voor bezoekers?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "Tot hoe laat kunnen we 's avonds langskomen?", "label": 8}
+{"intent": "farm_location_directions", "lang": "en", "text": "Where is the farm located and how do we get there?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Can we reach the farm by public bus or train?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Is there car parking available at the farm?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Can you provide the GPS coordinates or Google Maps location?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Which highway exit should we take to reach Noor's farm?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Is the access road paved or suitable for small cars?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿Dónde está ubicada la granja y cómo llegamos?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿Hay estacionamiento disponible para vehículos?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿Se puede llegar en autobús o transporte público?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿Podrían compartir su ubicación en el mapa o coordenadas?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿El camino de acceso está pavimentado para autos pequeños?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Où se trouve exactement la ferme et comment y accéder?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Y a-t-il un parking gratuit sur place pour les voitures?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Peut-on venir en transports en commun ou en train?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Pouvez-vous nous envoyer l'adresse exacte et l'itinéraire?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Wo genau liegt der Bauernhof und wie kommt man dorthin?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Gibt es vor Ort Parkplätze für Besucher?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Kann man die Farm mit öffentlichen Verkehrsmitteln erreichen?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Können Sie uns eine Wegbeschreibung oder Koordinaten schicken?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "Dove si trova l'agriturismo e come ci arriviamo in auto?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "C'è un parcheggio disponibile per i visitatori?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "È possibile arrivare con i mezzi pubblici dalla città?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "Qual è l'indirizzo esatto per il navigatore satellitare?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "खेत का सही पता क्या है और हम वहाँ कैसे पहुँच सकते हैं?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "क्या फार्म पर गाड़ियां पार्क करने की जगह है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "क्या यहाँ बस या ट्रेन से पहुँचा जा सकता है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "कृपया लोकेशन या रास्ता बताएं।", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "Onde fica a fazenda e como faço para chegar de carro?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "Tem estacionamento no local para os turistas?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "É possível chegar de ônibus ou transporte coletivo?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Waar ligt de boerderij en hoe komen we er met de auto?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Is er parkeergelegenheid aanwezig op het terrein?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Kunnen we er komen met het openbaar vervoer?", "label": 3}
+{"intent": "activities_available", "lang": "en", "text": "What activities and experiences can visitors do at the farm?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Can our kids try milking cows or feeding farm animals?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Do you offer fruit picking or harvesting activities?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Are there tractor rides or farming workshops available?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Can we take a guided walk through the crop fields?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Do you have pottery making or organic farming demonstrations?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿Qué actividades interactivas se pueden hacer en la granja?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿Los niños pueden ordeñar vacas o alimentar a los animales?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿Ofrecen recolección de frutas o paseos en tractor?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿Hay talleres de agricultura ecológica o alfarería?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿Qué experiencias agrícolas tienen para turistas?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "Quelles activités proposez-vous pour les visiteurs à la ferme?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "Les enfants peuvent-ils nourrir les animaux ou traire les vaches?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "Proposez-vous la cueillette de fruits ou des balades en tracteur?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "Y a-t-il des ateliers pratiques sur l'agriculture biologique?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "Welche Aktivitäten und Erlebnisse werden auf dem Hof angeboten?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "Dürfen Kinder Kühe melken oder Hoftiere füttern?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "Kann man Obst selbst pflücken oder eine Traktorfahrt machen?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "Gibt es Workshops zu ökologischer Landwirtschaft?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "Quali attività si possono svolgere durante la visita in fattoria?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "I bambini possono dare da mangiare agli animali o mungere le mucche?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "Offrite la raccolta della frutta o giri sul trattore?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "Ci sono laboratori didattici per famiglie?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "खेत पर पर्यटक क्या-क्या मजेदार काम और अनुभव कर सकते हैं?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "क्या बच्चे गाय का दूध दुहना या जानवरों को चारा खिलाना सीख सकते हैं?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "क्या यहाँ फल तोड़ने और ट्रैक्टर की सवारी की सुविधा है?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "खेत में कौन-कौन सी गतिविधियां उपलब्ध हैं?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "Quais atividades os turistas podem fazer na propriedade?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "As crianças podem alimentar os animais ou tirar leite da vaca?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "Tem colheita de frutas no pomar ou passeio de trator?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "Welke activiteiten zijn er te doen op de boerderij?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "Mogen kinderen dieren voeren of koeien melken?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "Bieden jullie zelf fruit plukken of tractorritten aan?", "label": 0}
+{"intent": "amenities_food", "lang": "en", "text": "Do you serve traditional meals, lunch, or tea at the farm?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "Are there clean restrooms and washrooms for visitors?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "Is safe drinking water available on the premises?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "Do you offer vegetarian or vegan food options?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "Are there shaded rest areas or places to sit down?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "Can we bring our own picnic food and snacks?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿Ofrecen comida típica, almuerzo campestre o té a los visitantes?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿Tienen baños limpios y servicios sanitarios disponibles?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿Hay agua potable para beber en la finca?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿Tienen opciones de comida vegetariana?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿Hay zonas con sombra para descansar?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Servez-vous des repas traditionnels ou le déjeuner à la ferme?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Y a-t-il des toilettes propres pour les visiteurs?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Y a-t-il de l'eau potable fraîche disponible sur place?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Proposez-vous des plats végétariens faits maison?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "Gibt es auf dem Hof Verpflegung, Mittagessen oder Tee?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "Sind saubere Toiletten und Waschräume für Gäste vorhanden?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "Gibt es trinkbares Leitungswasser auf der Farm?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "Gibt es schattige Sitzgelegenheiten zum Ausruhen?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "È possibile pranzare in agriturismo con piatti tipici locali?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "Ci sono servizi igienici puliti per i visitatori?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "C'è disponibilità di acqua potabile e bibite fresche?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "Avete opzioni vegetariane per il pranzo?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या खेत पर देशी खाना, दोपहर का भोजन या चाय-नाश्ता मिलता है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या यहाँ पर्यटकों के लिए साफ शौचालय और बाथरूम की सुविधा है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या पीने का साफ फिल्टर पानी उपलब्ध है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या विश्राम के लिए छायादार बैठने की जगह है?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "Vocês servem almoço típico da roça ou café colonial?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "Tem banheiros limpos para os turistas usarem?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "Tem água potável e área coberta para descanso?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "Serveren jullie traditionele lunch of thee op de boerderij?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "Zijn er schone toiletten en wasruimtes voor gasten?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "Is er drinkwater en een schaduwrijke plek om te zitten?", "label": 1}
+{"intent": "pet_policy", "lang": "en", "text": "Are dogs and domestic pets allowed on the farm?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "Can I bring my pet dog along during the farm visit?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "What is your policy regarding pets and animals?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "Do dogs need to be kept on a leash at all times?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "Are guide dogs permitted inside the farm buildings?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "¿Se permiten perros y mascotas en la granja?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "¿Puedo llevar a mi perro con correa durante la visita?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "¿Cuál es su política sobre mascotas domésticas?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "¿Es un lugar apto para mascotas (pet friendly)?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "Les chiens et les animaux de compagnie sont-ils acceptés?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "Puis-je venir avec mon chien tenu en laisse?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "Quelle est votre politique concernant les animaux domestiques?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "Sind Hunde und Haustiere auf dem Bauernhof erlaubt?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "Darf ich meinen Hund an der Leine mitbringen?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "Wie lautet Ihre Regelung bezüglich Haustieren?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "I cani sono ammessi durante la visita alla fattoria?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "Posso portare il mio animale domestico al guinzaglio?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "La vostra struttura accetta animali domestici?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "क्या खेत में पालतू कुत्ते या जानवर लाने की अनुमति है?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "क्या हम अपने पालतू कुत्ते को साथ ला सकते हैं?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "पालतू जानवरों के लिए खेत के क्या नियम हैं?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "Animais de estimação e cachorros são permitidos na fazenda?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "Posso levar meu cachorro com coleira para o passeio?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "Zijn honden en huisdieren toegestaan op het terrein?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "Mag ik mijn aangelijnde hond meenemen naar de boerderij?", "label": 5}
+{"intent": "booking_reservation", "lang": "en", "text": "Do we need to book our farm tour in advance?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "Can we just walk in without a prior reservation?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "How do I make a reservation for a group of 10 people?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "Is booking required for weekend visits?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "What is the cancellation policy for tour bookings?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿Es necesario reservar la visita con antelación?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿Podemos llegar directamente sin previa reserva?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿Cómo puedo hacer una reserva para un grupo grande?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿Se requiere reservar para venir el sábado?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "Faut-il réserver la visite guidée à l'avance?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "Peut-on venir directement sans réservation préalable?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "Comment réserver un créneau pour une famille?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "Muss man die Führung im Voraus buchen?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "Kann man auch spontan ohne Reservierung vorbeikommen?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "Wie kann ich einen Termin für eine Reisegruppe reservieren?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "È necessaria la prenotazione anticipata per la visita?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "Possiamo venire direttamente senza aver prenotato?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "Come si effettua una prenotazione per domenica?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "क्या खेत आने से पहले बुकिंग कराना जरूरी है?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "क्या हम बिना पहले से बताए सीधे आ सकते हैं?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "१० लोगों के ग्रुप के लिए बुकिंग कैसे करें?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "É preciso fazer reserva com antecedência para visitar?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "Podemos ir sem agendar horário antes?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "Moeten we van tevoren reserveren voor de rondleiding?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "Kunnen we gewoon spontaan binnenlopen zonder afspraak?", "label": 2}
+{"intent": "out_of_scope", "lang": "en", "text": "What is the weather going to be like in Mumbai next week?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Do you know who won the cricket match yesterday?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Can you recommend a good hotel near the airport?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Hello, nice to meet you! How are you doing today?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Where can I exchange euros for Indian rupees?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Can you help me fix my phone's camera setting?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¿Cómo estará el clima en la ciudad mañana?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¡Hola! Mucho gusto, ¿cómo estás hoy?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¿Dónde queda la farmacia más cercana en el pueblo?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¿Quién ganó el partido de fútbol anoche?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "Quel temps fera-t-il demain dans la région?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "Bonjour! Enchanté de faire votre connaissance.", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "Pouvez-vous me conseiller un bon restaurant en ville?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "Wie wird das Wetter morgen in der Umgebung?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "Hallo! Schön Sie kennenzulernen, wie geht es Ihnen?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "Wo finde ich den nächsten Geldautomaten?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "Che tempo farà domani da queste parti?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "Piacere di conoscerti! Come stai oggi?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "Dove posso trovare una farmacia nelle vicinanze?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "नमस्ते! आप कैसी हैं और आपका दिन कैसा चल रहा है?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "कल यहाँ का मौसम कैसा रहने की संभावना है?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "नजदीकी एटीएम या बैंक कहाँ पर है?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "Como estará o tempo amanhã por aqui?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "Olá! Prazer em conhecer, tudo bem com você?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "Wat voor weer wordt het morgen in deze streek?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "Hallo, leuk om kennis te maken! Hoe gaat het met u?", "label": 4}
+{"intent": "price_tour", "lang": "en", "text": "Hi, what is the ticket price for the orchard walk?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "what is the ticket price for a farm tour?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "How much per person for admission?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "Good morning, what is the ticket price for the guided tour?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "Is a farm tour free or how much is admission?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "Good morning, how much does the guided tour cost?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "Hi, what is the ticket price for admission?", "label": 7}
+{"intent": "price_tour", "lang": "en", "text": "Hello, how much does admission cost?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Cuánto sale la entrada a el tour guiado?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Cuánto cobran por persona para la visita a la finca?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿cuánto cuesta la visita a la finca?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿cuál es el precio de la entrada general?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Cuánto sale la entrada a la visita a la finca?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "Hola, ¿cuál es el precio de el tour guiado?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "¿Tienen tarifas para el tour guiado?", "label": 7}
+{"intent": "price_tour", "lang": "es", "text": "Hola, ¿cuál es el precio de la visita a la finca?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Bonjour, combien coûte la visite guidée?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Salut, combien coûte la visite guidée?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Bonjour, combien coûte l'entrée à la ferme?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Salut, combien coûte le billet adulte?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "combien coûte la visite guidée?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Quel est le prix par personne pour l'entrée à la ferme?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Bonjour, quel est le tarif de la visite guidée?", "label": 7}
+{"intent": "price_tour", "lang": "fr", "text": "Combien coûte le billet pour l'entrée à la ferme?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Wie hoch ist der Preis pro Person für die Besichtigung?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Was verlangen Sie für die Hofführung?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Wie hoch ist der Preis pro Person für der Eintritt zum Bauernhof?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Guten Tag, was kostet der Eintritt für die Besichtigung?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Guten Tag, wie viel kostet der Eintritt zum Bauernhof?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Hallo, was kostet der Eintritt für die Besichtigung?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "Hallo, was kostet der Eintritt für die Hofführung?", "label": 7}
+{"intent": "price_tour", "lang": "de", "text": "wie viel kostet die Hofführung?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Quanto si paga a persona per il tour guidato?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Buongiorno, qual è il prezzo per la visita alla fattoria?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Quali sono le tariffe di il tour guidato?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Quanto si paga a persona per il biglietto d'ingresso?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "Quali sono le tariffe di la visita alla fattoria?", "label": 7}
+{"intent": "price_tour", "lang": "it", "text": "qual è il prezzo per il tour guidato?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "खेत के भ्रमण की टिकट कितने की है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "नमस्कार, फार्म टूर की टिकट कितने की है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "नमस्कार, फार्म टूर का प्रति व्यक्ति किराया कितना है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "फार्म टूर का प्रति व्यक्ति किराया कितना है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "गाइडेड टूर देखने का कुल कितना खर्चा आएगा?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "नमस्कार, गाइडेड टूर का प्रति व्यक्ति किराया कितना है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "नमस्ते, फार्म टूर का प्रति व्यक्ति किराया कितना है?", "label": 7}
+{"intent": "price_tour", "lang": "hi", "text": "नमस्कार, खेत के भ्रमण का प्रति व्यक्ति किराया कितना है?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "Quanto cobram por pessoa para a visita à fazenda?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "Bom dia, quanto custa a entrada?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "quanto custa a entrada?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "Bom dia, qual o valor da entrada para a visita à fazenda?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "qual o valor da entrada para o passeio guiado?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "Quanto cobram por pessoa para o passeio guiado?", "label": 7}
+{"intent": "price_tour", "lang": "pt", "text": "quanto custa a visita à fazenda?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Wat zijn de tarieven per persoon voor het boerderijbezoek?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Wat zijn de tarieven per persoon voor de rondleiding?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Wat zijn de tarieven per persoon voor de entree?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Hallo, hoeveel kost de rondleiding?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "Hallo, hoeveel kost de entree?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "wat is de toegangsprijs voor het boerderijbezoek?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "hoeveel kost de entree?", "label": 7}
+{"intent": "price_tour", "lang": "nl", "text": "hoeveel kost het boerderijbezoek?", "label": 7}
+{"intent": "price_produce", "lang": "en", "text": "Can we purchase fresh vegetables directly from the farm?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "what is the price of fresh vegetables?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "how much do you charge for farm eggs?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "How much per kilo for seasonal fruits?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "Hi, what is the price of farm eggs?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "Can we purchase seasonal fruits directly from the farm?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "Hello, how much do you charge for seasonal fruits?", "label": 6}
+{"intent": "price_produce", "lang": "en", "text": "How much per kilo for fresh vegetables?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿Podemos comprar la miel orgánica en la granja?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿Podemos comprar las verduras ecológicas en la granja?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿cuánto cuesta la miel orgánica por kilo?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "Hola, ¿a qué precio venden la leche fresca?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿cuánto cuesta la leche fresca por kilo?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "¿Podemos comprar la leche fresca en la granja?", "label": 6}
+{"intent": "price_produce", "lang": "es", "text": "Buenas tardes, ¿a qué precio venden la leche fresca?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "Peut-on acheter les légumes frais sur place?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "Bonjour, combien vendez-vous le lait frais?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "quel est le prix de les légumes frais?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "quel est le prix de les fruits de saison?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "combien vendez-vous les légumes frais?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "Peut-on acheter les fruits de saison sur place?", "label": 6}
+{"intent": "price_produce", "lang": "fr", "text": "combien vendez-vous le lait frais?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "was kostet die Hof-Eier bei Ihnen?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "wie teuer ist das saisonale Obst im Hofladen?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Hallo, was kostet das saisonale Obst bei Ihnen?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "wie teuer ist die Hof-Eier im Hofladen?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "was kostet die frische Rohmilch bei Ihnen?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Kann man frisches der Bio-Honig kaufen?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Hallo, wie teuer ist der Bio-Honig im Hofladen?", "label": 6}
+{"intent": "price_produce", "lang": "de", "text": "Hallo, wie teuer ist die frische Rohmilch im Hofladen?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Ciao, a quanto vendete il miele biologico?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Possiamo comprare la frutta di stagione direttamente da voi?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Ciao, quanto costa il miele biologico?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Possiamo comprare le verdure fresche direttamente da voi?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Possiamo comprare il latte fresco direttamente da voi?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Possiamo comprare il miele biologico direttamente da voi?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Ciao, quanto costa le verdure fresche?", "label": 6}
+{"intent": "price_produce", "lang": "it", "text": "Ciao, a quanto vendete il latte fresco?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "क्या हम यहाँ से ताजा ताजी सब्जियां खरीद सकते हैं?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "नमस्ते, जैविक फल का क्या भाव है?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "क्या हम यहाँ से ताजा जैविक फल खरीद सकते हैं?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "क्या हम यहाँ से ताजा गाय का दूध खरीद सकते हैं?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "नमस्ते, गाय का दूध का क्या भाव है?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "नमस्ते, खेत का जैविक फल कितने रुपये का है?", "label": 6}
+{"intent": "price_produce", "lang": "hi", "text": "खेत का जैविक फल कितने रुपये का है?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Olá, quanto custa as frutas da época da fazenda?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Vocês vendem o leite fresco aqui?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "quanto custa os ovos caipiras da fazenda?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Vocês vendem o mel orgânico aqui?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Olá, qual o preço de as frutas da época?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Vocês vendem as frutas da época aqui?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "Olá, quanto custa o leite fresco da fazenda?", "label": 6}
+{"intent": "price_produce", "lang": "pt", "text": "quanto custa o mel orgânico da fazenda?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Verkopen jullie ook de biologische honing?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Verkopen jullie ook het seizoensfruit?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "hoeveel kost de verse melk per kilo?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Hallo, hoeveel kost de biologische honing per kilo?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Hallo, wat kost de verse eieren?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "Verkopen jullie ook de verse eieren?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "hoeveel kost de biologische honing per kilo?", "label": 6}
+{"intent": "price_produce", "lang": "nl", "text": "hoeveel kost de verse eieren per kilo?", "label": 6}
+{"intent": "visitation_hours", "lang": "en", "text": "Are you open on Sundays?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "what are your open and close?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "Hi, what are your visiting hours?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "Until what hour can visitors visiting hours?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "Are you open on visiting hours?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "Hello, what are your enter in the evening?", "label": 8}
+{"intent": "visitation_hours", "lang": "en", "text": "Hi, what time does the farm Sundays?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿Están abiertos en abre y cierra?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "Hola, ¿a qué hora abre y cierra la granja?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "Hola, ¿a qué hora los domingos la granja?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿Están abiertos en los domingos?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿a qué hora los domingos la granja?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "¿cuáles son sus los domingos?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "Hola, ¿a qué hora horarios de visita la granja?", "label": 8}
+{"intent": "visitation_hours", "lang": "es", "text": "Hola, ¿cuáles son sus los domingos?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "quels sont vos horaires d'ouverture?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "à quelle heure dimanche la ferme?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "à quelle heure ouvre le matin la ferme?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "à quelle heure horaires d'ouverture la ferme?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "La ferme est-elle ouverte le horaires d'ouverture?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "Bonjour, quels sont vos horaires d'ouverture?", "label": 8}
+{"intent": "visitation_hours", "lang": "fr", "text": "Bonjour, quels sont vos ouvre le matin?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Haben Sie am öffnet morgens geöffnet?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Hallo, wie sind die Wochenende?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Haben Sie am Öffnungszeiten geöffnet?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Hallo, wann Wochenende der Hof?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Hallo, wie sind die öffnet morgens?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "wann Öffnungszeiten der Hof?", "label": 8}
+{"intent": "visitation_hours", "lang": "de", "text": "Haben Sie am Wochenende geöffnet?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "Siete aperti la apre e chiude?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "Siete aperti la domenica?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "quali sono i vostri orari di apertura?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "Ciao, quali sono i vostri apre e chiude?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "Ciao, a che ora apre e chiude la fattoria?", "label": 8}
+{"intent": "visitation_hours", "lang": "it", "text": "Ciao, a che ora domenica la fattoria?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "क्या फार्म रविवार को खुला रहता है?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "नमस्ते, फार्म पर्यटकों के लिए कब रविवार को है?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "खेत के खुलने का समय क्या हैं?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "खेत के रविवार को क्या हैं?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "नमस्ते, खेत के खुलता और बंद होता क्या हैं?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "नमस्ते, खेत के रविवार को क्या हैं?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "क्या फार्म खुलता और बंद होता खुला रहता है?", "label": 8}
+{"intent": "visitation_hours", "lang": "hi", "text": "नमस्ते, खेत के खुलने का समय क्या हैं?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "a que horas abre para o público a propriedade?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "quais são os abre para o público?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "Olá, a que horas abre para o público a propriedade?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "Olá, quais são os abre para o público?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "a que horas horários de visitação a propriedade?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "Olá, quais são os horários de visitação?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "quais são os horários de visitação?", "label": 8}
+{"intent": "visitation_hours", "lang": "pt", "text": "Olá, a que horas horários de visitação a propriedade?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "Hallo, hoe laat openingstijden de boerderij?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "wat zijn de opent voor bezoekers?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "hoe laat opent voor bezoekers de boerderij?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "Hallo, wat zijn de openingstijden?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "Hallo, wat zijn de opent voor bezoekers?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "Hallo, hoe laat opent voor bezoekers de boerderij?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "hoe laat openingstijden de boerderij?", "label": 8}
+{"intent": "visitation_hours", "lang": "nl", "text": "wat zijn de openingstijden?", "label": 8}
+{"intent": "farm_location_directions", "lang": "en", "text": "where is the farm located and how do we public transport or bus?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Is there free parking available for visitors?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Hello, where is the farm located and how do we free parking?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Can you provide directions or GPS coordinates?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "where is the farm located and how do we GPS coordinates?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Hello, can we reach the farm by GPS coordinates?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Can you provide directions or reach there by car?", "label": 3}
+{"intent": "farm_location_directions", "lang": "en", "text": "Hello, where is the farm located and how do we public transport or bus?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿dónde queda la granja y cómo podemos aparcamiento gratuito?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿se puede llegar en autobús o tren?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "Hola, ¿se puede llegar en autobús o tren?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿Tienen llegar en coche para los turistas?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿Tienen aparcamiento gratuito para los turistas?", "label": 3}
+{"intent": "farm_location_directions", "lang": "es", "text": "¿Tienen autobús o tren para los turistas?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Bonjour, où se trouve la ferme et comment venir en voiture?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Bonjour, où se trouve la ferme et comment un parking gratuit?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Y a-t-il un parking gratuit sur place?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Bonjour, peut-on venir en un parking gratuit?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "peut-on venir en un parking gratuit?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "Y a-t-il train ou bus sur place?", "label": 3}
+{"intent": "farm_location_directions", "lang": "fr", "text": "où se trouve la ferme et comment train ou bus?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Hallo, wo liegt der Bauernhof und wie können wir mit dem Auto anreisen?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Hallo, wo liegt der Bauernhof und wie können wir Bus und Bahn?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Gibt es vor Ort Bus und Bahn?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Gibt es vor Ort mit dem Auto anreisen?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Hallo, kann man mit mit dem Auto anreisen anreisen?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "wo liegt der Bauernhof und wie können wir Bus und Bahn?", "label": 3}
+{"intent": "farm_location_directions", "lang": "de", "text": "Gibt es vor Ort kostenlose Parkplätze?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "C'è un parcheggio per le auto?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "Ciao, è possibile arrivare con i mezzi pubblici?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "C'è i mezzi pubblici per le auto?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "Ciao, dove si trova la fattoria e come si i mezzi pubblici?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "C'è arrivare in macchina per le auto?", "label": 3}
+{"intent": "farm_location_directions", "lang": "it", "text": "Ciao, dove si trova la fattoria e come si un parcheggio?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "क्या खेत पर रास्ता खोजें की सुविधा है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "नमस्ते, क्या यहाँ पार्किंग से आया जा सकता है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "क्या खेत पर पार्किंग की सुविधा है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "क्या खेत पर बस या ट्रेन की सुविधा है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "नमस्ते, खेत का पता क्या है और हम कैसे रास्ता खोजें?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "क्या यहाँ बस या ट्रेन से आया जा सकता है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "hi", "text": "क्या यहाँ रास्ता खोजें से आया जा सकता है?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "Olá, onde fica a fazenda e como estacionamento gratuito?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "onde fica a fazenda e como estacionamento gratuito?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "Olá, tem estacionamento gratuito no local?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "tem chegar de carro no local?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "Olá, onde fica a fazenda e como chegar de carro?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "onde fica a fazenda e como chegar de carro?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "Olá, tem chegar de carro no local?", "label": 3}
+{"intent": "farm_location_directions", "lang": "pt", "text": "tem estacionamento gratuito no local?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Hallo, is er parkeergelegenheid aanwezig?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "is er komen met de auto aanwezig?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "waar ligt de boerderij en hoe kunnen we er parkeergelegenheid?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "waar ligt de boerderij en hoe kunnen we er komen met de auto?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Hallo, waar ligt de boerderij en hoe kunnen we er komen met de auto?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Hallo, is er komen met de auto aanwezig?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "is er parkeergelegenheid aanwezig?", "label": 3}
+{"intent": "farm_location_directions", "lang": "nl", "text": "Hallo, waar ligt de boerderij en hoe kunnen we er parkeergelegenheid?", "label": 3}
+{"intent": "activities_available", "lang": "en", "text": "Do you offer fruit picking during the tour?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Do you offer activities during the tour?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Hello, can our children try farming workshops?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Are there hands-on farming workshops available?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Are there hands-on tractor rides available?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "what fruit picking can visitors experience at the farm?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Are there hands-on milking cows available?", "label": 0}
+{"intent": "activities_available", "lang": "en", "text": "Do you offer milking cows during the tour?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿qué actividades se pueden hacer en la granja?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿los niños pueden probar actividades?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿Tienen ordeñar vacas para turistas?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿Tienen paseos en tractor para turistas?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿Tienen cosechar frutas para turistas?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿qué cosechar frutas se pueden hacer en la granja?", "label": 0}
+{"intent": "activities_available", "lang": "es", "text": "¿los niños pueden probar cosechar frutas?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "Proposez-vous balades en tracteur sur place?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "les enfants peuvent-ils faire cueillir des fruits?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "Bonjour, les enfants peuvent-ils faire cueillir des fruits?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "quelles activités proposez-vous aux visiteurs?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "les enfants peuvent-ils faire balades en tracteur?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "quelles balades en tracteur proposez-vous aux visiteurs?", "label": 0}
+{"intent": "activities_available", "lang": "fr", "text": "quelles cueillir des fruits proposez-vous aux visiteurs?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "welche Obst pflücken kann man auf dem Hof machen?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "dürfen Kinder Kühe melken ausprobieren?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "Hallo, welche Aktivitäten kann man auf dem Hof machen?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "Gibt es Obst pflücken für Besucher?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "Gibt es Aktivitäten für Besucher?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "welche Aktivitäten kann man auf dem Hof machen?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "welche Traktorfahrten kann man auf dem Hof machen?", "label": 0}
+{"intent": "activities_available", "lang": "de", "text": "Hallo, dürfen Kinder Obst pflücken ausprobieren?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "quali mungere le mucche si possono svolgere in agriturismo?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "quali raccogliere frutta si possono svolgere in agriturismo?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "Offrite attività per gli ospiti?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "quali giri in trattore si possono svolgere in agriturismo?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "i bambini possono fare raccogliere frutta?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "i bambini possono fare giri in trattore?", "label": 0}
+{"intent": "activities_available", "lang": "it", "text": "Offrite giri in trattore per gli ospiti?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "नमस्ते, खेत पर पर्यटक कौन-सी फल तोड़ना कर सकते हैं?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "नमस्ते, खेत पर पर्यटक कौन-सी ट्रैक्टर की सवारी कर सकते हैं?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "खेत पर पर्यटक कौन-सी दूध दुहना कर सकते हैं?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "क्या यहाँ गतिविधियां की सुविधा उपलब्ध है?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "क्या बच्चे फल तोड़ना सीख सकते हैं?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "क्या यहाँ फल तोड़ना की सुविधा उपलब्ध है?", "label": 0}
+{"intent": "activities_available", "lang": "hi", "text": "क्या बच्चे ट्रैक्टर की सवारी सीख सकते हैं?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "Olá, as crianças podem participar de colheita de frutas?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "as crianças podem participar de tirar leite de vaca?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "as crianças podem participar de colheita de frutas?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "quais atividades estão disponíveis para os visitantes?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "Olá, quais atividades estão disponíveis para os visitantes?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "Olá, quais tirar leite de vaca estão disponíveis para os visitantes?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "as crianças podem participar de atividades?", "label": 0}
+{"intent": "activities_available", "lang": "pt", "text": "Olá, as crianças podem participar de tirar leite de vaca?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "mogen kinderen fruit plukken proberen?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "welke fruit plukken kunnen gasten doen op de boerderij?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "Hallo, mogen kinderen activiteiten proberen?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "Hallo, welke fruit plukken kunnen gasten doen op de boerderij?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "Hallo, mogen kinderen fruit plukken proberen?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "Hallo, welke activiteiten kunnen gasten doen op de boerderij?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "Hallo, mogen kinderen koeien melken proberen?", "label": 0}
+{"intent": "activities_available", "lang": "nl", "text": "mogen kinderen koeien melken proberen?", "label": 0}
+{"intent": "amenities_food", "lang": "en", "text": "Hello, do you serve vegetarian food at the farm?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "Hello, are there clean farm lunch or tea for guests?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "Hello, do you serve farm lunch or tea at the farm?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "do you serve restrooms at the farm?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "do you serve drinking water at the farm?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "Is there vegetarian food available on the property?", "label": 1}
+{"intent": "amenities_food", "lang": "en", "text": "do you serve vegetarian food at the farm?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "Hola, ¿tienen baños limpios disponibles?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿Hay baños limpios en la finca?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿ofrecen agua potable a los visitantes?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿tienen agua potable disponibles?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿Hay almuerzo campestre en la finca?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "¿tienen almuerzo campestre disponibles?", "label": 1}
+{"intent": "amenities_food", "lang": "es", "text": "Hola, ¿ofrecen baños limpios a los visitantes?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Avez-vous eau potable sur place?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Avez-vous le déjeuner traditionnel sur place?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Avez-vous toilettes sur place?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Bonjour, y a-t-il des toilettes propres pour les visiteurs?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Bonjour, y a-t-il des le déjeuner traditionnel propres pour les visiteurs?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "servez-vous eau potable à la ferme?", "label": 1}
+{"intent": "amenities_food", "lang": "fr", "text": "Bonjour, servez-vous le déjeuner traditionnel à la ferme?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "Hallo, gibt es auf dem Hof Toiletten?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "gibt es auf dem Hof Trinkwasser?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "Hallo, gibt es auf dem Hof Trinkwasser?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "sind saubere Trinkwasser vorhanden?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "Hallo, sind saubere Mittagessen oder Tee vorhanden?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "Hallo, sind saubere Toiletten vorhanden?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "gibt es auf dem Hof Mittagessen oder Tee?", "label": 1}
+{"intent": "amenities_food", "lang": "de", "text": "sind saubere Toiletten vorhanden?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "servite servizi igienici in agriturismo?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "ci sono acqua potabile per i visitatori?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "Ciao, servite acqua potabile in agriturismo?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "ci sono pranzo tipico per i visitatori?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "Ciao, ci sono pranzo tipico per i visitatori?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "Ciao, servite servizi igienici in agriturismo?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "Ciao, servite pranzo tipico in agriturismo?", "label": 1}
+{"intent": "amenities_food", "lang": "it", "text": "servite acqua potabile in agriturismo?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या खेत पर देशी दोपहर का खाना या चाय मिलता है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या पर्यटकों के लिए साफ देशी दोपहर का खाना या चाय है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या पर्यटकों के लिए साफ पीने का साफ पानी है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "नमस्ते, क्या खेत पर शौचालय मिलता है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या खेत पर पीने का साफ पानी मिलता है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "नमस्ते, क्या पर्यटकों के लिए साफ पीने का साफ पानी है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "नमस्ते, क्या खेत पर पीने का साफ पानी मिलता है?", "label": 1}
+{"intent": "amenities_food", "lang": "hi", "text": "क्या पर्यटकों के लिए साफ शौचालय है?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "Olá, tem banheiros limpos para os turistas?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "vocês servem água potável na propriedade?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "Olá, vocês servem água potável na propriedade?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "tem água potável limpos para os turistas?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "Olá, vocês servem banheiros na propriedade?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "tem almoço caseiro limpos para os turistas?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "Olá, vocês servem almoço caseiro na propriedade?", "label": 1}
+{"intent": "amenities_food", "lang": "pt", "text": "Olá, tem água potável limpos para os turistas?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "Hallo, zijn er nette schone toiletten aanwezig?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "Hallo, zijn er nette lunch of thee aanwezig?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "serveren jullie schone toiletten op de boerderij?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "serveren jullie drinkwater op de boerderij?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "Hallo, serveren jullie lunch of thee op de boerderij?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "Hallo, zijn er nette drinkwater aanwezig?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "Hallo, serveren jullie drinkwater op de boerderij?", "label": 1}
+{"intent": "amenities_food", "lang": "nl", "text": "zijn er nette lunch of thee aanwezig?", "label": 1}
+{"intent": "pet_policy", "lang": "en", "text": "Hello, are dogs and pets allowed on the farm?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "are domestic animals allowed on the farm?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "Hello, can I bring my dogs and pets with me?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "What is your policy regarding domestic animals?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "can I bring my domestic animals with me?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "are dogs and pets allowed on the farm?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "are pet dog on a leash allowed on the farm?", "label": 5}
+{"intent": "pet_policy", "lang": "en", "text": "What is your policy regarding pet dog on a leash?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "Hola, ¿se permiten animales de compañía en la granja?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "Hola, ¿puedo llevar a mi animales de compañía al recorrido?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "¿Cuál es la política sobre perro con correa?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "¿puedo llevar a mi perros y mascotas al recorrido?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "Hola, ¿puedo llevar a mi perro con correa al recorrido?", "label": 5}
+{"intent": "pet_policy", "lang": "es", "text": "Hola, ¿se permiten perro con correa en la granja?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "les chiens et animaux sont-ils acceptés à la ferme?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "Bonjour, puis-je emmener mon chien en laisse avec moi?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "Bonjour, les chiens et animaux sont-ils acceptés à la ferme?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "puis-je emmener mon chiens et animaux avec moi?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "les chien en laisse sont-ils acceptés à la ferme?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "Bonjour, puis-je emmener mon chiens et animaux avec moi?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "puis-je emmener mon chien en laisse avec moi?", "label": 5}
+{"intent": "pet_policy", "lang": "fr", "text": "Bonjour, les chien en laisse sont-ils acceptés à la ferme?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "darf ich meinen Hunde und Haustiere mitbringen?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "Hallo, sind angeleinter Hund auf dem Hof erlaubt?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "Hallo, darf ich meinen angeleinter Hund mitbringen?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "Hallo, sind Hunde und Haustiere auf dem Hof erlaubt?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "darf ich meinen angeleinter Hund mitbringen?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "sind Hunde und Haustiere auf dem Hof erlaubt?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "sind angeleinter Hund auf dem Hof erlaubt?", "label": 5}
+{"intent": "pet_policy", "lang": "de", "text": "Hallo, darf ich meinen Hunde und Haustiere mitbringen?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "i cani e animali domestici sono ammessi durante la visita?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "posso portare il mio cane al guinzaglio?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "posso portare il mio cani e animali domestici?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "i cane al guinzaglio sono ammessi durante la visita?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "Ciao, i cani e animali domestici sono ammessi durante la visita?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "Ciao, i cane al guinzaglio sono ammessi durante la visita?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "Ciao, posso portare il mio cane al guinzaglio?", "label": 5}
+{"intent": "pet_policy", "lang": "it", "text": "Ciao, posso portare il mio cani e animali domestici?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "क्या हम अपना कुत्ते और पालतू जानवर साथ ला सकते हैं?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "नमस्ते, क्या खेत में कुत्ते और पालतू जानवर लाने की अनुमति है?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "क्या हम अपना पालतू कुत्ता साथ ला सकते हैं?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "क्या खेत में कुत्ते और पालतू जानवर लाने की अनुमति है?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "क्या खेत में पालतू कुत्ता लाने की अनुमति है?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "नमस्ते, क्या हम अपना कुत्ते और पालतू जानवर साथ ला सकते हैं?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "नमस्ते, क्या हम अपना पालतू कुत्ता साथ ला सकते हैं?", "label": 5}
+{"intent": "pet_policy", "lang": "hi", "text": "नमस्ते, क्या खेत में पालतू कुत्ता लाने की अनुमति है?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "Olá, posso levar meu cachorros e animais de estimação comigo?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "posso levar meu cachorros e animais de estimação comigo?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "Olá, posso levar meu cachorro com coleira comigo?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "Olá, cachorro com coleira são permitidos na fazenda?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "cachorro com coleira são permitidos na fazenda?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "Olá, cachorros e animais de estimação são permitidos na fazenda?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "cachorros e animais de estimação são permitidos na fazenda?", "label": 5}
+{"intent": "pet_policy", "lang": "pt", "text": "posso levar meu cachorro com coleira comigo?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "mag ik mijn honden en huisdieren meenemen?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "Hallo, zijn honden en huisdieren toegestaan op het terrein?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "mag ik mijn aangelijnde hond meenemen?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "Hallo, mag ik mijn aangelijnde hond meenemen?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "zijn aangelijnde hond toegestaan op het terrein?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "Hallo, mag ik mijn honden en huisdieren meenemen?", "label": 5}
+{"intent": "pet_policy", "lang": "nl", "text": "Hallo, zijn aangelijnde hond toegestaan op het terrein?", "label": 5}
+{"intent": "booking_reservation", "lang": "en", "text": "can we just walk in or is a reservation required?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "do we need to book in advance before visiting?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "Hello, do we need to book in advance before visiting?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "do we need to prior booking before visiting?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "Hello, can we just walk in or is book in advance required?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "How do I make prior booking for a group?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "Hello, can we just walk in or is prior booking required?", "label": 2}
+{"intent": "booking_reservation", "lang": "en", "text": "can we just walk in or is book in advance required?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿Cómo puedo hacer reservar con anticipación para varias personas?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "Hola, ¿es necesario reserva previa con antelación?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿podemos llegar directamente o se requiere reservar con anticipación?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿es necesario reservar con anticipación con antelación?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿podemos llegar directamente o se requiere una reserva?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "Hola, ¿podemos llegar directamente o se requiere reservar con anticipación?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "¿Cómo puedo hacer reserva previa para varias personas?", "label": 2}
+{"intent": "booking_reservation", "lang": "es", "text": "Hola, ¿es necesario una reserva con antelación?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "Bonjour, faut-il réservation à l'avance?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "Bonjour, peut-on venir sans réservation préalable?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "Bonjour, peut-on venir sans réserver à l'avance préalable?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "peut-on venir sans réservation préalable?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "faut-il réserver à l'avance à l'avance?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "faut-il réservation à l'avance?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "peut-on venir sans réserver à l'avance préalable?", "label": 2}
+{"intent": "booking_reservation", "lang": "fr", "text": "Bonjour, faut-il réserver à l'avance à l'avance?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "ist eine Voranmeldung unbedingt erforderlich?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "Hallo, muss man im Voraus reservieren?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "Hallo, ist eine Voranmeldung unbedingt erforderlich?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "Hallo, muss man im Voraus Voranmeldung?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "muss man im Voraus Voranmeldung?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "Hallo, ist eine reservieren unbedingt erforderlich?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "ist eine reservieren unbedingt erforderlich?", "label": 2}
+{"intent": "booking_reservation", "lang": "de", "text": "muss man im Voraus reservieren?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "è necessario prenotazione anticipata prima di venire?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "possiamo venire senza prenotazione anticipata?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "è necessario prenotare prima di venire?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "Ciao, possiamo venire senza prenotazione anticipata?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "Ciao, possiamo venire senza prenotare?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "Ciao, è necessario prenotazione anticipata prima di venire?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "possiamo venire senza prenotare?", "label": 2}
+{"intent": "booking_reservation", "lang": "it", "text": "Ciao, è necessario prenotare prima di venire?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "क्या हम बिना अग्रिम बुकिंग सीधे आ सकते हैं?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "नमस्ते, क्या आने से पहले अग्रिम बुकिंग कराना जरूरी है?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "नमस्ते, क्या हम बिना पहले से बुकिंग सीधे आ सकते हैं?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "नमस्ते, क्या हम बिना अग्रिम बुकिंग सीधे आ सकते हैं?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "नमस्ते, क्या आने से पहले पहले से बुकिंग कराना जरूरी है?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "क्या आने से पहले अग्रिम बुकिंग कराना जरूरी है?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "क्या आने से पहले पहले से बुकिंग कराना जरूरी है?", "label": 2}
+{"intent": "booking_reservation", "lang": "hi", "text": "क्या हम बिना पहले से बुकिंग सीधे आ सकते हैं?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "Olá, é preciso agendar com antecedência com antecedência?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "podemos ir sem agendar com antecedência?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "Olá, podemos ir sem agendar com antecedência?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "podemos ir sem reserva?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "Olá, podemos ir sem reserva?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "Olá, é preciso reserva com antecedência?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "é preciso agendar com antecedência com antecedência?", "label": 2}
+{"intent": "booking_reservation", "lang": "pt", "text": "é preciso reserva com antecedência?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "Hallo, is een afspraak maken noodzakelijk voor het bezoek?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "moeten we vooraf een afspraak maken?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "Hallo, moeten we vooraf reserveren?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "Hallo, is reserveren noodzakelijk voor het bezoek?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "is een afspraak maken noodzakelijk voor het bezoek?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "moeten we vooraf reserveren?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "is reserveren noodzakelijk voor het bezoek?", "label": 2}
+{"intent": "booking_reservation", "lang": "nl", "text": "Hallo, moeten we vooraf een afspraak maken?", "label": 2}
+{"intent": "out_of_scope", "lang": "en", "text": "Hello, what is the weather going to be like tomorrow?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "can you tell me where the nearest my phone settings is located?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Can you help me configure hospital?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Do you know who won hospital?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "what is the the football match going to be like tomorrow?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Do you know who won weather?", "label": 4}
+{"intent": "out_of_scope", "lang": "en", "text": "Hello, what is the the football match going to be like tomorrow?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¿cómo estará la farmacia mañana?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¿Sabes quién ganó la farmacia?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¿Sabes quién ganó el partido de fútbol?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "Hola, ¿cómo estará el partido de fútbol mañana?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "Hola, ¿cómo estará la farmacia mañana?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¿Sabes quién ganó el clima?", "label": 4}
+{"intent": "out_of_scope", "lang": "es", "text": "¿dónde queda el más cercano el partido de fútbol?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "Bonjour, où se trouve le plus proche la pharmacie?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "Bonjour, quel temps fera-t-il la pharmacie?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "Bonjour, quel temps fera-t-il la météo?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "quel temps fera-t-il la pharmacie?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "où se trouve le plus proche la pharmacie?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "quel temps fera-t-il la météo?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "Bonjour, où se trouve le plus proche la météo?", "label": 4}
+{"intent": "out_of_scope", "lang": "fr", "text": "où se trouve le plus proche la météo?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "wo ist die nächste Wetter?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "wo ist die nächste Apotheke?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "Hallo, wie wird das Apotheke morgen?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "wie wird das Apotheke morgen?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "Hallo, wo ist die nächste Wetter?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "wie wird das Wetter morgen?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "Hallo, wo ist die nächste Apotheke?", "label": 4}
+{"intent": "out_of_scope", "lang": "de", "text": "Hallo, wie wird das Wetter morgen?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "Ciao, dov'è la più vicina farmacia?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "che tempo farà tempo?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "che tempo farà farmacia?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "Ciao, che tempo farà tempo?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "dov'è la più vicina farmacia?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "Ciao, dov'è la più vicina tempo?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "Ciao, che tempo farà farmacia?", "label": 4}
+{"intent": "out_of_scope", "lang": "it", "text": "dov'è la più vicina tempo?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "क्या आप जानते हैं कि सबसे नजदीकी अस्पताल कहाँ है?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "कल यहाँ का अस्पताल कैसा रहेगा?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "क्या आप जानते हैं कि सबसे नजदीकी मौसम कहाँ है?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "नमस्ते, क्या आप जानते हैं कि सबसे नजदीकी अस्पताल कहाँ है?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "नमस्ते, कल यहाँ का मौसम कैसा रहेगा?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "कल यहाँ का मौसम कैसा रहेगा?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "नमस्ते, कल यहाँ का अस्पताल कैसा रहेगा?", "label": 4}
+{"intent": "out_of_scope", "lang": "hi", "text": "नमस्ते, क्या आप जानते हैं कि सबसे नजदीकी मौसम कहाँ है?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "onde fica o o hospital mais próximo?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "onde fica o o tempo mais próximo?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "como estará o tempo amanhã?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "Olá, como estará o hospital amanhã?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "como estará o hospital amanhã?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "Olá, onde fica o o hospital mais próximo?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "Olá, como estará o tempo amanhã?", "label": 4}
+{"intent": "out_of_scope", "lang": "pt", "text": "Olá, onde fica o o tempo mais próximo?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "wat voor het ziekenhuis wordt het morgen?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "Hallo, wat voor het weer wordt het morgen?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "Hallo, waar is de dichtstbijzijnde het ziekenhuis?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "Hallo, waar is de dichtstbijzijnde het weer?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "Hallo, wat voor het ziekenhuis wordt het morgen?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "waar is de dichtstbijzijnde het weer?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "wat voor het weer wordt het morgen?", "label": 4}
+{"intent": "out_of_scope", "lang": "nl", "text": "waar is de dichtstbijzijnde het ziekenhuis?", "label": 4}
