@@ -125,7 +125,7 @@ class FarmAssistantViewModel(
             val touristBubble = UiChatMessage(
                 sender = MessageSender.TOURIST,
                 touristText = message,
-                noorText = "पर्यटक का सवाल: \"$message\"",
+                noorText = message,
                 touristLanguage = langToUse ?: "auto"
             )
             _uiState.update { it.copy(messages = it.messages + touristBubble) }
@@ -136,30 +136,47 @@ class FarmAssistantViewModel(
                 when (touristResult) {
                     is UnifiedTouristResult.Tier1Hit -> {
                         val fastResult = touristResult.result
+                        val template = backend.getDatabase().getTemplate(fastResult.intent)
+                        val hindiReply = template?.fillTemplate(fastResult.slotValue, languageCode = "hi")
+                            ?: fastResult.englishReply
+                        val hindiQuestion = backend.translateToFarmer(message, fastResult.touristLanguage)
+
                         val replyBubble = UiChatMessage(
                             sender = MessageSender.FARMER,
                             touristText = fastResult.responseInTouristLanguage,
-                            noorText = "⚡ ऑटो-जवाब (डेटाबेस): ${fastResult.englishReply}",
+                            noorText = hindiReply,
                             touristLanguage = fastResult.touristLanguage,
                             tier = PipelineTier.TIER_1_FAST_DB,
                             isAutoReply = true,
                             latencyMs = fastResult.latencyMs
                         )
-                        _uiState.update {
-                            it.copy(
+                        _uiState.update { state ->
+                            val updatedMessages = state.messages.map { msg ->
+                                if (msg.id == touristBubble.id) {
+                                    msg.copy(noorText = hindiQuestion, touristLanguage = fastResult.touristLanguage)
+                                } else msg
+                            } + replyBubble
+                            state.copy(
                                 isProcessing = false,
                                 touristWaitingForReply = false,
-                                messages = it.messages + replyBubble,
+                                messages = updatedMessages,
                                 pendingTier2Request = null,
                                 pendingTier3FarmerPrompt = null
                             )
                         }
                     }
                     is UnifiedTouristResult.Tier2PromptRequired -> {
-                        _uiState.update {
-                            it.copy(
+                        val hindiQuestion = backend.translateToFarmer(message, touristResult.promptRequest.touristLanguage)
+                        _uiState.update { state ->
+                            val updatedMessages = state.messages.map { msg ->
+                                if (msg.id == touristBubble.id) {
+                                    msg.copy(noorText = hindiQuestion, touristLanguage = touristResult.promptRequest.touristLanguage)
+                                } else msg
+                            }
+                            state.copy(
                                 isProcessing = false,
                                 touristWaitingForReply = true,
+                                messages = updatedMessages,
                                 pendingTier2Request = touristResult.promptRequest,
                                 pendingTier3FarmerPrompt = null
                             )
@@ -167,11 +184,11 @@ class FarmAssistantViewModel(
                     }
                     is UnifiedTouristResult.Tier3Fallback -> {
                         val fallback = touristResult.result
-                        // Update tourist bubble with Hindi translation for Noor's side
+                        // Update tourist bubble with clean Hindi translation for Noor's side
                         _uiState.update { state ->
                             val updatedMessages = state.messages.map { msg ->
                                 if (msg.id == touristBubble.id) {
-                                    msg.copy(noorText = "पर्यटक (हिंदी में अनुवाद): \"${fallback.farmerTranslatedText}\"")
+                                    msg.copy(noorText = fallback.farmerTranslatedText, touristLanguage = fallback.touristLanguage)
                                 } else msg
                             }
                             state.copy(
@@ -209,7 +226,7 @@ class FarmAssistantViewModel(
                 val replyBubble = UiChatMessage(
                     sender = MessageSender.FARMER,
                     touristText = completion.responseInTouristLanguage,
-                    noorText = "नूर: $enteredValue",
+                    noorText = enteredValue,
                     touristLanguage = completion.touristLanguage,
                     tier = PipelineTier.TIER_2_TEMPLATE_PROMPT,
                     latencyMs = completion.latencyMs
@@ -234,21 +251,25 @@ class FarmAssistantViewModel(
     }
 
     /**
-     * Noor replies freely in Hindi for Tier 3
+     * Noor replies freely in Hindi (acts as a standard chat interface: can send multiple messages anytime)
      */
     fun answerTier3(replyText: String) {
-        val pending = _uiState.value.pendingTier3FarmerPrompt ?: return
-        if (replyText.isBlank()) return
+        val cleanText = replyText.trim()
+        if (cleanText.isBlank()) return
+
+        val targetLang = _uiState.value.pendingTier3FarmerPrompt?.touristLanguage
+            ?: _uiState.value.messages.lastOrNull { it.sender == MessageSender.TOURIST }?.touristLanguage
+            ?: if (_uiState.value.selectedTouristLanguage != "auto") _uiState.value.selectedTouristLanguage else "en"
 
         viewModelScope.launch {
             _uiState.update { it.copy(isNoorSubmitting = true, lastError = null) }
-            val result = backend.handleFarmerReply(replyText, pending.touristLanguage)
+            val result = backend.handleFarmerReply(cleanText, targetLang)
 
             result.onSuccess { turnResult ->
                 val replyBubble = UiChatMessage(
                     sender = MessageSender.FARMER,
                     touristText = turnResult.touristTranslatedText,
-                    noorText = "नूर: $replyText",
+                    noorText = cleanText,
                     touristLanguage = turnResult.touristLanguage,
                     tier = PipelineTier.TIER_3_DIRECT_TRANSLATION_FALLBACK,
                     latencyMs = turnResult.latencyMs

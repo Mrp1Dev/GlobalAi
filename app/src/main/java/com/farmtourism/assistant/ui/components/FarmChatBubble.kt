@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.farmtourism.assistant.backend.model.MessageSender
+import com.farmtourism.assistant.backend.model.PipelineTier
 import com.farmtourism.assistant.ui.model.UiChatMessage
 import com.farmtourism.assistant.ui.navigation.AppMode
 import com.farmtourism.assistant.ui.theme.Tier1Green
@@ -72,7 +73,7 @@ fun FarmChatBubble(
                 // Sender label
                 if (!isMyMessage) {
                     Text(
-                        text = if (isTouristView) "Noor (Host Farmer)" else "विदेशी पर्यटक (Tourist)",
+                        text = if (isTouristView) "Noor (Host Farmer)" else "पर्यटक (Tourist)",
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Bold,
                         color = if (isTouristView) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary,
@@ -91,14 +92,35 @@ fun FarmChatBubble(
 
                 Spacer(modifier = Modifier.height(3.dp))
 
-                // Footer: Timestamp & Auto-reply badge
+                // Footer: Timestamp, Tier Badge & Auto-reply indicator
                 Row(
                     modifier = Modifier.align(Alignment.End),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
+                    // Small grey "Tier 1 / Tier 2 / Tier 3" specifier visible on tourist side & for demo
+                    if (message.sender == MessageSender.FARMER) {
+                        Surface(
+                            shape = RoundedCornerShape(4.dp),
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f),
+                            modifier = Modifier.padding(end = 6.dp)
+                        ) {
+                            Text(
+                                text = when (message.tier) {
+                                    PipelineTier.TIER_1_FAST_DB -> "Tier 1"
+                                    PipelineTier.TIER_2_TEMPLATE_PROMPT -> "Tier 2"
+                                    PipelineTier.TIER_3_DIRECT_TRANSLATION_FALLBACK -> "Tier 3"
+                                },
+                                fontSize = 9.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
+                                modifier = Modifier.padding(horizontal = 4.dp, vertical = 1.5.dp)
+                            )
+                        }
+                    }
+
                     if (message.isAutoReply) {
                         Text(
-                            text = "⚡ Instant reply",
+                            text = if (isTouristView) "⚡ Instant" else "⚡ ऑटो-जवाब",
                             fontSize = 10.sp,
                             fontWeight = FontWeight.SemiBold,
                             color = Tier1Green,

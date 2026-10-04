@@ -176,7 +176,7 @@ fun NoorChatView(
                     value = replyText,
                     onValueChange = { replyText = it },
                     placeholder = {
-                        Text("नूर का उत्तर (हिंदी में लिखें)...", fontSize = 14.sp)
+                        Text("संदेश लिखें (हिंदी में)...", fontSize = 14.sp)
                     },
                     modifier = Modifier.weight(1f),
                     shape = RoundedCornerShape(24.dp),

@@ -210,6 +210,25 @@ class FarmAssistantBackend(
     fun getClassifier(): IIntentClassifier = intentClassifier
 
     /**
+     * Translation Engine instance
+     */
+    fun getTranslationEngine(): ITranslationEngine = translationEngine
+
+    /**
+     * Translates any incoming foreign tourist text into Noor's native language (e.g. Hindi)
+     */
+    suspend fun translateToFarmer(text: String, sourceLanguage: String): String {
+        if (sourceLanguage.equals(farmerProfile.language, ignoreCase = true) || text.isBlank()) {
+            return text
+        }
+        return translationEngine.translate(
+            text = text,
+            sourceLanguage = sourceLanguage,
+            targetLanguage = farmerProfile.language
+        ).getOrNull()?.translatedText ?: text
+    }
+
+    /**
      * Pre-downloads a language model pack (e.g., Spanish, French, German) to guarantee
      * instant sub-100ms offline translation when tourists arrive.
      */
