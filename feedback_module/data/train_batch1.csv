@@ -1,0 +1,51 @@
+text,language,labels,severity,source
+"The guide was warm and answered all our questions. Best part of our trip.",en,guide_hospitality:pos;would_recommend_or_return,low,synthetic
+"We waited almost an hour before the tour started and nobody told us why.",en,timing_waiting:neg,high,synthetic
+"Hard to find the farm, the road was bumpy and the map took us to the wrong gate.",en,directions_access:neg,medium,synthetic
+"The fresh fruit tasting at the end was delicious!",en,food_drink:pos,low,synthetic
+"The lunch was cold and bland, quite disappointing.",en,food_drink:neg,medium,synthetic
+"It felt like a staged show, not a real working farm.",en,learning_authenticity:neg,medium,synthetic
+"I learned so much about how the crops are grown and harvested, and it all felt genuine.",en,learning_authenticity:pos,low,synthetic
+"Too expensive for what you get: two hours of walking and nothing included.",en,price_value:neg;experience_activity:neg,medium,synthetic
+"Great value for money, the price included a meal and a tasting.",en,price_value:pos;food_drink:pos,low,synthetic
+"The toilets were dirty and there was nowhere clean to sit.",en,facilities_cleanliness:neg,medium,synthetic
+"Clean, tidy and comfortable seating under the trees.",en,facilities_cleanliness:pos,low,synthetic
+"Started exactly on time and everything was well organised.",en,timing_waiting:pos,low,synthetic
+"Easy to find, and the directions you sent were perfect.",en,directions_access:pos,low,synthetic
+"The guide was rude and seemed bored. Would not recommend.",en,guide_hospitality:neg,high,synthetic
+"The walk was too long and exhausting in the heat, with no shade at all.",en,experience_activity:neg,medium,synthetic
+"We had a lovely time and will definitely come back next year with friends.",en,would_recommend_or_return,low,synthetic
+"It would be great to have a cooking class or a sunset tour as well.",en,wish_or_suggestion,low,synthetic
+"Lovely walk and a friendly host, but we waited 30 minutes and the toilets were not clean.",en,experience_activity:pos;guide_hospitality:pos;timing_waiting:neg;facilities_cleanliness:neg,medium,synthetic
+"Everything was fine.",en,,low,synthetic
+"Overpriced, and the guide kept trying to sell us souvenirs.",en,price_value:neg;guide_hospitality:neg,medium,synthetic
+"We loved harvesting the vegetables ourselves and the kids enjoyed it so much.",en,experience_activity:pos,low,synthetic
+"A half-day option would be nice, the full day was too long for us.",en,wish_or_suggestion;experience_activity:neg,low,synthetic
+"Amazing hospitality, the family welcomed us like old friends and we ate home-cooked food.",en,guide_hospitality:pos;food_drink:pos,low,synthetic
+"Waste of money. Late start, rude staff, dirty place. Never again.",en,timing_waiting:neg;guide_hospitality:neg;facilities_cleanliness:neg;price_value:neg,high,synthetic
+"Great experience, highly recommend to anyone visiting the area.",en,experience_activity:pos;would_recommend_or_return,low,synthetic
+"We got lost twice because there are no signs, but the tour itself was wonderful.",en,directions_access:neg;experience_activity:pos,medium,synthetic
+"Nice place but the explanations were too basic, I wanted to learn more about the farming methods.",en,learning_authenticity:neg;wish_or_suggestion,low,synthetic
+"Spotless place and excellent tea and snacks.",en,facilities_cleanliness:pos;food_drink:pos,low,synthetic
+"The tour started late again. This is our second visit and it is always chaotic.",en,timing_waiting:neg,medium,synthetic
+"Reasonably priced and honest. Not fancy but real farm life, and we loved it.",en,price_value:pos;learning_authenticity:pos;experience_activity:pos,low,synthetic
+"गाइड बहुत मिलनसार थे और हर सवाल का जवाब दिया।",hi,guide_hospitality:pos,low,synthetic
+"टूर एक घंटा देर से शुरू हुआ और किसी ने कुछ बताया नहीं।",hi,timing_waiting:neg,high,synthetic
+"खेत ढूँढना बहुत मुश्किल था, रास्ते में कोई बोर्ड नहीं था।",hi,directions_access:neg,medium,synthetic
+"ताज़े फल और घर का बना खाना बहुत स्वादिष्ट था।",hi,food_drink:pos,low,synthetic
+"खाना ठंडा और बेस्वाद था, मज़ा नहीं आया।",hi,food_drink:neg,medium,synthetic
+"हमें खेती के बारे में बहुत कुछ सीखने को मिला, सब कुछ असली लगा।",hi,learning_authenticity:pos,low,synthetic
+"कीमत बहुत ज़्यादा है, इतने पैसे में कुछ खास नहीं मिला।",hi,price_value:neg,medium,synthetic
+"पैसे वसूल! बहुत अच्छा अनुभव, हम दोबारा ज़रूर आएँगे।",hi,price_value:pos;experience_activity:pos;would_recommend_or_return,low,synthetic
+"शौचालय बहुत गंदा था और बैठने की जगह भी साफ़ नहीं थी।",hi,facilities_cleanliness:neg,medium,synthetic
+"सब कुछ साफ़-सुथरा था और बैठने का इंतज़ाम बढ़िया था।",hi,facilities_cleanliness:pos,low,synthetic
+"काश शाम का कोई छोटा टूर या खाना बनाने की क्लास भी होती।",hi,wish_or_suggestion,low,synthetic
+"गाइड का व्यवहार बहुत रूखा था, मज़ा किरकिरा हो गया।",hi,guide_hospitality:neg,medium,synthetic
+"चलना बहुत ज़्यादा था और धूप में बहुत थकान हो गई।",hi,experience_activity:neg,medium,synthetic
+"टूर समय पर शुरू हुआ और सब कुछ अच्छी तरह संभाला गया।",hi,timing_waiting:pos,low,synthetic
+"Guide bahut acche the, humein bahut kuch seekhne ko mila.",hi-rom,guide_hospitality:pos;learning_authenticity:pos,low,synthetic
+"Tour time pe shuru nahi hua, ek ghanta wait karna pada. Bakwas intezaam.",hi-rom,timing_waiting:neg,high,synthetic
+"Khana bahut accha tha, par farm dhundhna mushkil tha.",hi-rom,food_drink:pos;directions_access:neg,medium,synthetic
+"Paise zyada liye, utna mazaa nahi aaya.",hi-rom,price_value:neg,medium,synthetic
+"Bahut mast experience tha, doston ko zaroor batayenge.",hi-rom,experience_activity:pos;would_recommend_or_return,low,synthetic
+"Toilet ganda tha aur baithne ki jagah bhi theek nahi thi.",hi-rom,facilities_cleanliness:neg,medium,synthetic

@@ -1,0 +1,78 @@
+{
+  "timing_waiting:neg": {
+    "hi": "मेहमानों को टूर शुरू होने का समय पहले से बता दें और एक दिन पहले याद दिलाएँ।",
+    "en": "Tell guests the start time in advance and send a reminder the day before."
+  },
+  "directions_access:neg": {
+    "hi": "आने से पहले मेहमानों को खेत का लोकेशन पिन या कोई पहचान की जगह भेजें।",
+    "en": "Send guests a map pin or a landmark before they arrive."
+  },
+  "price_value:neg": {
+    "hi": "मेहमानों को पहले ही बता दें कि कीमत में क्या-क्या शामिल है।",
+    "en": "Tell guests upfront what the price includes."
+  },
+  "facilities_cleanliness:neg": {
+    "hi": "टूर से पहले बैठने और शौचालय जैसी जगहों की सफ़ाई जाँच लें।",
+    "en": "Check seating and toilets are clean before each tour."
+  },
+  "guide_hospitality:neg": {
+    "hi": "मेहमान को स्वागत या व्यवहार से शिकायत थी। टूर की शुरुआत में खुद मिलें और उनके सवालों के लिए समय रखें।",
+    "en": "A guest was unhappy with the welcome. Greet guests yourself at the start and leave time for their questions."
+  },
+  "experience_activity:neg": {
+    "hi": "मेहमान को टूर की गतिविधियाँ पसंद नहीं आईं। देखें कि कौन-सा हिस्सा बहुत लंबा, कठिन या फीका लगा और उसे बदलने पर विचार करें।",
+    "en": "A guest was not happy with the activities. Check which part felt too long, hard or dull, and consider changing it."
+  },
+  "food_drink:neg": {
+    "hi": "खाने-पीने को लेकर शिकायत आई है। परोसने से पहले ताज़गी और स्वाद जाँच लें, और मेहमानों से पहले ही उनकी खान-पान की ज़रूरतें पूछ लें।",
+    "en": "Food or drink drew a complaint. Check freshness and taste before serving, and ask guests about dietary needs in advance."
+  },
+  "learning_authenticity:neg": {
+    "hi": "मेहमान को लगा कि खेत के बारे में कम जानकारी मिली या अनुभव असली नहीं था। खेती का असली काम दिखाएँ और हर कदम सरल भाषा में समझाएँ।",
+    "en": "A guest felt they learned little or that it was not authentic. Show real farm work and explain each step simply."
+  },
+  "guide_hospitality:pos": {
+    "hi": "मेहमानों को आपका स्वागत पसंद आया। इसे इसी तरह जारी रखें।",
+    "en": "Guests liked your welcome. Keep doing it."
+  },
+  "experience_activity:pos": {
+    "hi": "मेहमानों को टूर की गतिविधियाँ पसंद आईं। इन्हें अपने टूर के विवरण में सबसे ऊपर रखें।",
+    "en": "Guests enjoyed the activities. Put them first in your tour description."
+  },
+  "food_drink:pos": {
+    "hi": "मेहमानों को खाना-पीना पसंद आया। इसे टूर का नियमित हिस्सा बनाएँ या अलग से भी पेश करें।",
+    "en": "Guests liked the food and drink. Make it a regular part of the tour or offer it separately."
+  },
+  "learning_authenticity:pos": {
+    "hi": "खेती की जानकारी वाला हिस्सा पसंद किया गया। इसे टूर का मुख्य आकर्षण बनाएँ।",
+    "en": "Guests liked learning about the farm. Make it a highlight of the tour."
+  },
+  "price_value:pos": {
+    "hi": "मेहमानों को कीमत के हिसाब से अनुभव अच्छा लगा। कीमत और उसमें शामिल चीज़ें साफ़ बताते रहें।",
+    "en": "Guests felt the experience was good value. Keep stating the price and what is included clearly."
+  },
+  "timing_waiting:pos": {
+    "hi": "मेहमानों को समय पर शुरुआत पसंद आई। यही समय-पालन जारी रखें।",
+    "en": "Guests liked that the tour started on time. Keep it up."
+  },
+  "directions_access:pos": {
+    "hi": "मेहमानों को खेत तक पहुँचना आसान लगा। यही रास्ते की जानकारी नए मेहमानों को भी भेजें।",
+    "en": "Guests found the farm easy to reach. Send the same directions to new guests."
+  },
+  "facilities_cleanliness:pos": {
+    "hi": "मेहमानों को सफ़ाई और सुविधाएँ अच्छी लगीं। इस स्तर को बनाए रखें।",
+    "en": "Guests liked the cleanliness and facilities. Keep this standard."
+  },
+  "would_recommend_or_return": {
+    "hi": "खुश मेहमान को धन्यवाद का संदेश भेजें और उनसे दोस्तों को बताने के लिए कहें।",
+    "en": "Thank this guest and ask them to tell friends."
+  },
+  "wish_or_suggestion": {
+    "hi": "मेहमान की इस इच्छा को नए टूर या सेवा के विचार के रूप में लिख लें।",
+    "en": "Note this wish as an idea for a new tour or service."
+  },
+  "_low_confidence": {
+    "hi": "इस समीक्षा से साफ़ निष्कर्ष नहीं निकला। कृपया इसे खुद पढ़ें या मेहमान से पूछें।",
+    "en": "No clear conclusion from this review. Please read it yourself or ask the guest."
+  }
+}

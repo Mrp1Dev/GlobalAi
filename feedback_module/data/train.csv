@@ -1,0 +1,4 @@
+text,language,labels,severity,source
+"Loved the farm walk but we waited 40 minutes to start.",en,experience_activity:pos;timing_waiting:neg,medium,synthetic
+"गाइड बहुत अच्छे थे, हमें बहुत कुछ सीखने को मिला।",hi,guide_hospitality:pos;learning_authenticity:pos,low,synthetic
+"Great day! We will definitely come back.",en,would_recommend_or_return,low,synthetic
