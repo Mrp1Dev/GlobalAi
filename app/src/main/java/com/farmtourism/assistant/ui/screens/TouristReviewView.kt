@@ -140,20 +140,14 @@ fun TouristReviewView(
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
-                    OutlinedButton(
-                        onClick = { viewModel.switchMode(AppMode.FARMER_NOOR) },
-                        contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 4.dp)
-                    ) {
-                        Text("View as Noor", fontSize = 11.sp)
-                    }
                 }
             }
         }
 
-        // Demo Presets Chip Row (for live judging presentation)
+        // Sample Feedback Presets Chip Row
         Column {
             Text(
-                text = "⚡ Quick Demo Presets (World Bank Benchmark)",
+                text = "⚡ Sample Feedback Examples",
                 style = MaterialTheme.typography.labelMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary
@@ -232,38 +226,6 @@ fun TouristReviewView(
                 Icon(imageVector = Icons.AutoMirrored.Filled.Send, contentDescription = null)
                 Spacer(modifier = Modifier.width(8.dp))
                 Text("Submit Review for Host Noor", fontWeight = FontWeight.Bold)
-            }
-        }
-
-        // Privacy & Zero-Server Explanatory Box
-        Surface(
-            color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
-            shape = RoundedCornerShape(12.dp),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Column(modifier = Modifier.padding(12.dp)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(
-                        imageVector = Icons.Default.Spa,
-                        contentDescription = null,
-                        tint = Tier1Green,
-                        modifier = Modifier.size(16.dp)
-                    )
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text(
-                        text = "100% On-Device & Zero Server Runtime",
-                        style = MaterialTheme.typography.labelSmall,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = "Google ML Kit identifies the language and translates the review to Hindi on the host phone. The on-device aspect classifier categorizes feedback into operational suggestions for Noor with $0 server hosting cost.",
-                    style = MaterialTheme.typography.bodySmall,
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
             }
         }
     }

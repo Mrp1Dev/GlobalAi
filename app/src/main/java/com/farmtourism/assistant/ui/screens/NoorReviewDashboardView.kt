@@ -256,7 +256,7 @@ fun NoorReviewDashboardView(
                     // Hindi Translation
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            text = "🇮🇳 हिंदी अनुवाद (ऑन-डिवाइस Google ML Kit):",
+                            text = "🇮🇳 हिंदी अनुवाद:",
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color(0xFF15803D)
@@ -364,63 +364,6 @@ fun NoorReviewDashboardView(
                             }
                         }
                     }
-                }
-            }
-
-            // 4. World Bank Human-in-the-Loop Guardrail Banner
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(12.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f)
-                )
-            ) {
-                Column(modifier = Modifier.padding(14.dp)) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            imageVector = Icons.Default.Shield,
-                            contentDescription = null,
-                            tint = MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.size(18.dp)
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            text = "मानवीय नियंत्रण (Human-in-the-Loop Principle)",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 13.sp,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
-                    }
-                    Spacer(modifier = Modifier.height(6.dp))
-                    Text(
-                        text = RecommendationRuleEngine.GUARDRAIL_DISCLAIMER_HI,
-                        style = MaterialTheme.typography.bodySmall,
-                        fontSize = 11.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        lineHeight = 16.sp
-                    )
-                }
-            }
-
-            // 5. Latency Telemetry
-            if (analysis?.timings != null) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Speed,
-                        contentDescription = null,
-                        modifier = Modifier.size(14.dp),
-                        tint = MaterialTheme.colorScheme.outline
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = "⏱️ भाषा: ${analysis.timings.detectionMs}ms · अनुवाद: ${analysis.timings.translationMs}ms · वर्गीकरण: ${analysis.timings.classificationMs}ms · कुल: ${analysis.timings.totalMs}ms ($0 Cost)",
-                        fontSize = 11.sp,
-                        color = MaterialTheme.colorScheme.outline
-                    )
                 }
             }
         }

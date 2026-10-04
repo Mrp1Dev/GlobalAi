@@ -120,9 +120,7 @@ fun TouristChatView(
                     // Waiting for Noor's reply indicator
                     if (state.touristWaitingForReply) {
                         item {
-                            WaitingForNoorBubble(
-                                onSwitchToNoor = { viewModel.switchMode(AppMode.FARMER_NOOR) }
-                            )
+                            WaitingForNoorBubble()
                         }
                     }
                 }
@@ -214,9 +212,7 @@ fun TouristChatView(
 }
 
 @Composable
-private fun WaitingForNoorBubble(
-    onSwitchToNoor: () -> Unit
-) {
+private fun WaitingForNoorBubble() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -225,42 +221,25 @@ private fun WaitingForNoorBubble(
     ) {
         Surface(
             shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp, bottomStart = 4.dp, bottomEnd = 16.dp),
-            color = Tier2Amber.copy(alpha = 0.12f),
+            color = MaterialTheme.colorScheme.surfaceVariant,
             modifier = Modifier.padding(vertical = 4.dp)
         ) {
             Row(
-                modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+                modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 CircularProgressIndicator(
-                    color = Tier2Amber,
+                    color = MaterialTheme.colorScheme.primary,
                     strokeWidth = 2.dp,
-                    modifier = Modifier.size(16.dp)
+                    modifier = Modifier.size(14.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                Column {
-                    Text(
-                        text = "Question sent to Noor in Hindi. Waiting for reply...",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = Tier2Amber,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                    Text(
-                        text = "Tap below to answer from Noor's perspective:",
-                        fontSize = 11.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-                Spacer(modifier = Modifier.width(8.dp))
-                OutlinedButton(
-                    onClick = onSwitchToNoor,
-                    shape = RoundedCornerShape(8.dp),
-                    contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp)
-                ) {
-                    Icon(Icons.Default.SwapHoriz, contentDescription = null, modifier = Modifier.size(14.dp))
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("Noor's View", fontSize = 11.sp)
-                }
+                Text(
+                    text = "Noor is writing a reply...",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontWeight = FontWeight.Medium
+                )
             }
         }
     }

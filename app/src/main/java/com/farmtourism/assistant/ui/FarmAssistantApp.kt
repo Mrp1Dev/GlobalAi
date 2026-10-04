@@ -88,22 +88,20 @@ fun FarmAssistantApp(
                                         text = if (state.currentMode == AppMode.TOURIST) {
                                             state.farmerProfile.farmName
                                         } else {
-                                            "नमस्ते ${state.farmerProfile.name}! (Noor's Portal)"
+                                            "नमस्ते ${state.farmerProfile.name}!"
                                         },
                                         style = MaterialTheme.typography.titleMedium,
                                         fontWeight = FontWeight.Bold,
                                         maxLines = 1
                                     )
-                                    Text(
-                                        text = if (state.currentMode == AppMode.TOURIST) {
-                                            "Host: Noor (Hindi/हिन्दी) • On-Device AI"
-                                        } else {
-                                            "पर्यटक चैट एवं समीक्षा • ऑन-डिवाइस अनुवाद"
-                                        },
-                                        style = MaterialTheme.typography.labelSmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                        fontSize = 11.sp
-                                    )
+                                    if (state.currentMode == AppMode.TOURIST) {
+                                        Text(
+                                            text = "Host: Noor (Hindi/हिन्दी)",
+                                            style = MaterialTheme.typography.labelSmall,
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                            fontSize = 11.sp
+                                        )
+                                    }
                                 }
                             },
                             actions = {

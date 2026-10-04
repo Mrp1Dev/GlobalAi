@@ -92,8 +92,7 @@ fun NoorChatView(
         ) {
             if (state.messages.isEmpty() && state.pendingTier2Request == null && state.pendingTier3FarmerPrompt == null) {
                 NoorEmptyState(
-                    farmerName = state.farmerProfile.name,
-                    onSwitchToTourist = { viewModel.switchMode(AppMode.TOURIST) }
+                    farmerName = state.farmerProfile.name
                 )
             } else {
                 LazyColumn(
@@ -374,8 +373,7 @@ private fun NoorQuickRepliesRow(
 
 @Composable
 private fun NoorEmptyState(
-    farmerName: String,
-    onSwitchToTourist: () -> Unit
+    farmerName: String
 ) {
     Column(
         modifier = Modifier
@@ -408,14 +406,5 @@ private fun NoorEmptyState(
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = androidx.compose.ui.text.style.TextAlign.Center
         )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Button(
-            onClick = onSwitchToTourist,
-            shape = RoundedCornerShape(12.dp)
-        ) {
-            Text("Switch to Tourist Mode to Test Asking a Question")
-        }
     }
 }
