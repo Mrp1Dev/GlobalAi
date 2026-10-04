@@ -55,10 +55,10 @@ class FullPipelineTest {
         )
         // tour_price_inr is pre-seeded as "500" in LocalFarmDatabase
         fakeTranslationEngine.registerMockTranslation(
-            text = "The price for a guided farm tour is ₹500 per person.",
+            text = "The price for a guided farm tour is ₹500.",
             source = "en",
             target = "es",
-            result = "El precio de una visita guiada por la granja es de 500 ₹ por persona."
+            result = "El precio de una visita guiada por la granja es de 500 ₹."
         )
 
         // Act
@@ -70,7 +70,7 @@ class FullPipelineTest {
         assertEquals("price_tour", tier1.intent)
         assertEquals("tour_price_inr", tier1.slotKey)
         assertEquals("500", tier1.slotValue)
-        assertEquals("El precio de una visita guiada por la granja es de 500 ₹ por persona.", tier1.responseInTouristLanguage)
+        assertEquals("El precio de una visita guiada por la granja es de 500 ₹.", tier1.responseInTouristLanguage)
         assertEquals(PipelineTier.TIER_1_FAST_DB, tier1.conversationTurn.tier)
         assertEquals(MessageSender.TOURIST, tier1.conversationTurn.sender)
 
@@ -275,11 +275,11 @@ class FullPipelineTest {
 
         // Default fill
         val defaultFilled = template.fillTemplate("600")
-        assertEquals("The price for a guided farm tour is ₹600 per person.", defaultFilled)
+        assertEquals("The price for a guided farm tour is ₹600.", defaultFilled)
 
         // Noor prompt in Hindi
         val noorHiPrompt = template.getNoorPrompt("hi")
-        assertEquals("इस फार्म टूर की प्रति व्यक्ति कीमत क्या है?", noorHiPrompt)
+        assertEquals("इस फार्म टूर की कीमत क्या है?", noorHiPrompt)
 
         // All replies should contain the slotKey
         val allReplies = template.getAllReplyTemplates()

@@ -15,26 +15,26 @@
     {
       "intent": "price_tour",
       "slot_key": "tour_price_inr",
-      "description": "Inquiries regarding tour pricing, ticket costs, student/child discounts, family packages, and per-person rates for the coffee farm walk.",
+      "description": "Inquiries regarding tour pricing, ticket costs, student/child discounts, family packages, and tour rates for the coffee farm walk.",
       "noor_prompt_template": {
-        "hi": "कृपया टूर की कीमत बताएं, प्रति व्यक्ति कितने रुपये है?"
+        "hi": "कृपया टूर की कीमत बताएं, कितने रुपये है?"
       },
-      "default_reply_template": "Our coffee farm walk is {tour_price_inr} per person, including a guided tour and tasting session.",
+      "default_reply_template": "Our coffee farm walk is {tour_price_inr}, including a guided tour and tasting session.",
       "sample_slot_value": "500 rs",
       "reply_template_variations": [
-        "Our coffee farm walk is {tour_price_inr} per person, including a guided tour and tasting session.",
+        "Our coffee farm walk is {tour_price_inr}, including a guided tour and tasting session.",
         "The standard tour price is {tour_price_inr}, and we offer a 50% discount for children under 12.",
         "For a family of four, the total comes to {tour_price_inr} for two adults and two kids, with the kids' tickets half price.",
         "You can join the morning walk for {tour_price_inr}, which covers the upper Arabica slopes and our lower bean fields.",
-        "The per-person rate is {tour_price_inr}, but if you're a student, just show your ID and you'll get a 20% off that price.",
+        "The tour rate is {tour_price_inr}, but if you're a student, just show your ID and you'll get a 20% off that price.",
         "We charge {tour_price_inr} for the full walk, and that includes a small bag of our fresh-roasted coffee to take home."
       ],
       "noor_prompt_variations": {
         "hi": [
-          "कृपया टूर की कीमत बताएं, प्रति व्यक्ति कितने रुपये है?",
+          "कृपया टूर की कीमत बताएं, कितने रुपये है?",
           "क्या आप टूर प्राइस इनरुपीस में बता सकते हैं? हमें स्लॉट भरना है।",
-          "एक व्यक्ति के लिए कॉफी फार्म वॉक का किराया क्या है?",
-          "कृपया टूर की दर (प्रति व्यक्ति) बताएं ताकि हम इसे अपने रिकॉर्ड में दर्ज कर सकें।"
+          "कॉफी फार्म वॉक का किराया क्या है?",
+          "कृपया टूर की दर बताएं ताकि हम इसे अपने रिकॉर्ड में दर्ज कर सकें।"
         ]
       }
     },

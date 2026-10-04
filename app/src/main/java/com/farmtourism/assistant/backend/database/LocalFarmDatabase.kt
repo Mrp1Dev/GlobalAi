@@ -162,12 +162,12 @@ class LocalFarmDatabase(
                 slotKey = "tour_price_inr",
                 description = "Tour pricing and group rates",
                 noorPromptTemplates = mapOf(
-                    "hi" to "इस फार्म टूर की प्रति व्यक्ति कीमत क्या है?"
+                    "hi" to "इस फार्म टूर की कीमत क्या है?"
                 ),
-                defaultReplyTemplate = "The price for a guided farm tour is ₹{tour_price_inr} per person.",
+                defaultReplyTemplate = "The price for a guided farm tour is ₹{tour_price_inr}.",
                 sampleSlotValue = "500",
-                sampleSlotValuesByLang = mapOf("en" to "500 rs", "hi" to "₹500 प्रति व्यक्ति"),
-                replyTemplatesByLang = mapOf("hi" to "हमारे कॉफी फार्म वॉक का टिकट प्रति व्यक्ति {tour_price_inr} है, जिसमें गाइडेड टूर और टेस्टिंग शामिल है।")
+                sampleSlotValuesByLang = mapOf("en" to "500 rs", "hi" to "₹500"),
+                replyTemplatesByLang = mapOf("hi" to "हमारे कॉफी फार्म वॉक का टिकट {tour_price_inr} है, जिसमें गाइडेड टूर और टेस्टिंग शामिल है।")
             ),
             IntentTemplate(
                 intent = "price_produce",
