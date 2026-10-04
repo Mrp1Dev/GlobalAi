@@ -55,6 +55,7 @@ htmlcov/
 *.pt
 *.pth
 *.bin
+!app/src/main/assets/*.bin
 *.safetensors
 *.gguf
 *.tflite

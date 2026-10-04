@@ -29,6 +29,10 @@ class OnnxIntentClassifier(
     private var ortSession: OrtSession? = null
     private var isInitialized = false
 
+    private val tokenizer: MmBertTokenizer by lazy {
+        MmBertTokenizer(context)
+    }
+
     private val labelMap = mapOf(
         0 to "activities_available",
         1 to "amenities_food",
@@ -109,21 +113,7 @@ class OnnxIntentClassifier(
         val session = ortSession!!
 
         val maxLen = 64
-        val inputIds = LongArray(maxLen) { 0L }
-        val attentionMask = LongArray(maxLen) { 0L }
-
-        // BPE tokenization simulation
-        val tokenIds = pseudoTokenize(text)
-        inputIds[0] = 2L // [BOS]
-        attentionMask[0] = 1L
-
-        val fillLen = minOf(tokenIds.size, maxLen - 2)
-        for (i in 0 until fillLen) {
-            inputIds[i + 1] = tokenIds[i]
-            attentionMask[i + 1] = 1L
-        }
-        inputIds[fillLen + 1] = 1L // [EOS]
-        attentionMask[fillLen + 1] = 1L
+        val (inputIds, attentionMask) = tokenizer.encode(text, maxLen)
 
         val shape = longArrayOf(1, maxLen.toLong())
         val tensorIds = OnnxTensor.createTensor(env, LongBuffer.wrap(inputIds), shape)
@@ -202,12 +192,6 @@ class OnnxIntentClassifier(
         )
     }
 
-    private fun pseudoTokenize(text: String): List<Long> {
-        val words = text.split(Regex("\\s+"))
-        return words.map { word ->
-            (word.hashCode().toLong() and 0x7FFFFFFF) % 250000 + 10L
-        }
-    }
 
     override fun close() {
         ortSession?.close()
