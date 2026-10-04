@@ -1,14 +1,17 @@
 package com.farmtourism.assistant.backend.classifier
 
 import android.content.Context
+import android.util.Log
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment
 import ai.onnxruntime.OrtSession
 import com.farmtourism.assistant.backend.engine.IIntentClassifier
 import com.farmtourism.assistant.backend.model.IntentClassificationResult
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import java.io.ByteArrayOutputStream
+import org.json.JSONObject
 import java.io.File
 import java.io.InputStream
 import java.nio.LongBuffer
@@ -18,29 +21,39 @@ import kotlin.math.max
 /**
  * On-device Multilingual Intent Classifier powered by ONNX Runtime Mobile.
  * Executes the fine-tuned mmBERT model locally on the visitor's device with zero server overhead.
+ *
+ * Artifacts (all written to app/src/main/assets by `data/train_classifier.py --export-onnx`):
+ *  - model.onnx      fine-tuned INT8 classifier (inputs: input_ids, attention_mask -> logits)
+ *  - tokenizer.json  HF tokenizer used in training, run on-device by [MmBertTokenizer]
+ *  - label_map.json  logit index -> intent name
+ *
+ * Loading is lazy and off the main thread (call [warmUp] at startup). If any artifact is
+ * missing or broken, the classifier falls back to keyword matching and reports it via
+ * [activeEngine] / [loadError] instead of crashing.
  */
 class OnnxIntentClassifier(
     private val context: Context? = null,
     private val modelPathOrAsset: String = "model.onnx",
+    private val tokenizerPathOrAsset: String = "tokenizer.json",
+    private val labelMapPathOrAsset: String = "label_map.json",
     override val confidenceThreshold: Float = 0.70f
 ) : IIntentClassifier {
 
-    private var ortEnvironment: OrtEnvironment? = null
-    private var ortSession: OrtSession? = null
-    private var isInitialized = false
+    enum class Engine { NOT_LOADED, ONNX_MODEL, KEYWORD_FALLBACK }
 
-    private val labelMap = mapOf(
-        0 to "activities_available",
-        1 to "amenities_food",
-        2 to "booking_reservation",
-        3 to "farm_location_directions",
-        4 to "out_of_scope",
-        5 to "pet_policy",
-        6 to "price_produce",
-        7 to "price_tour",
-        8 to "tour_duration_difficulty",
-        9 to "visitation_hours"
-    )
+    @Volatile
+    var activeEngine: Engine = Engine.NOT_LOADED
+        private set
+
+    /** Why the ONNX model is not in use (null when it loaded fine). */
+    @Volatile
+    var loadError: String? = null
+        private set
+
+    private val loadMutex = Mutex()
+    private var ortSession: OrtSession? = null
+    private var tokenizer: MmBertTokenizer? = null
+    private var labelMap: Map<Int, String> = DEFAULT_LABEL_MAP
 
     // Fast keyword signatures for fallback / validation
     private val keywordSignatures = mapOf(
@@ -56,84 +69,89 @@ class OnnxIntentClassifier(
         "out_of_scope" to listOf("weather", "rain", "cricket", "football", "hotel", "airport", "atm", "camera", "mumbai", "delhi", "clima", "météo", "wetter", "मौसम")
     )
 
-    init {
-        tryInitialize()
+    /** Loads tokenizer + model in the background so the first tourist query is fast. */
+    override suspend fun warmUp() {
+        ensureLoaded()
     }
 
-    private fun tryInitialize() {
-        try {
-            ortEnvironment = OrtEnvironment.getEnvironment()
-            val sessionOptions = OrtSession.SessionOptions().apply {
-                setIntraOpNumThreads(2)
-                setOptimizationLevel(OrtSession.SessionOptions.OptLevel.BASIC_OPT)
-            }
-
-            val modelBytes = loadModelBytes()
-            if (modelBytes != null && modelBytes.isNotEmpty()) {
-                ortSession = ortEnvironment?.createSession(modelBytes, sessionOptions)
-                isInitialized = true
-            }
-        } catch (_: Throwable) {
-            // Falls back gracefully if ONNX native libraries are not present in local unit test runtime
-            isInitialized = false
-        }
-    }
-
-    private fun loadModelBytes(): ByteArray? {
-        if (context != null) {
-            return try {
-                context.assets.open(modelPathOrAsset).use { it.readBytes() }
-            } catch (_: Exception) {
-                null
-            }
-        }
-        val file = File(modelPathOrAsset)
-        return if (file.exists() && file.isFile) file.readBytes() else null
-    }
-
-    override suspend fun classify(text: String): Result<IntentClassificationResult> = withContext(Dispatchers.Default) {
-        runCatching {
+    override suspend fun classify(text: String): Result<IntentClassificationResult> = runCatching {
+        ensureLoaded()
+        withContext(Dispatchers.Default) {
             val startTime = System.currentTimeMillis()
             val cleanText = text.trim()
+            val session = ortSession
+            val tok = tokenizer
 
-            if (isInitialized && ortSession != null && ortEnvironment != null) {
-                runOnnxInference(cleanText, startTime)
+            if (activeEngine == Engine.ONNX_MODEL && session != null && tok != null) {
+                try {
+                    runOnnxInference(session, tok, cleanText, startTime)
+                } catch (t: Throwable) {
+                    log("ONNX inference failed, using keyword fallback for this query: $t")
+                    runFallbackInference(cleanText, startTime)
+                }
             } else {
                 runFallbackInference(cleanText, startTime)
             }
         }
     }
 
-    private fun runOnnxInference(text: String, startTime: Long): IntentClassificationResult {
-        val env = ortEnvironment!!
-        val session = ortSession!!
-
-        val maxLen = 64
-        val inputIds = LongArray(maxLen) { 0L }
-        val attentionMask = LongArray(maxLen) { 0L }
-
-        // BPE tokenization simulation
-        val tokenIds = pseudoTokenize(text)
-        inputIds[0] = 2L // [BOS]
-        attentionMask[0] = 1L
-
-        val fillLen = minOf(tokenIds.size, maxLen - 2)
-        for (i in 0 until fillLen) {
-            inputIds[i + 1] = tokenIds[i]
-            attentionMask[i + 1] = 1L
+    private suspend fun ensureLoaded() {
+        if (activeEngine != Engine.NOT_LOADED) return
+        loadMutex.withLock {
+            if (activeEngine != Engine.NOT_LOADED) return
+            withContext(Dispatchers.IO) {
+                activeEngine = try {
+                    loadModel()
+                    loadError = null
+                    log("mmBERT ONNX classifier ready (${labelMap.size} intents, maxLength=${tokenizer?.maxLength})")
+                    Engine.ONNX_MODEL
+                } catch (t: Throwable) {
+                    ortSession?.close()
+                    ortSession = null
+                    loadError = t.message ?: t.toString()
+                    log("ONNX classifier unavailable, using keyword fallback: $loadError")
+                    Engine.KEYWORD_FALLBACK
+                }
+            }
         }
-        inputIds[fillLen + 1] = 1L // [EOS]
-        attentionMask[fillLen + 1] = 1L
+    }
 
-        val shape = longArrayOf(1, maxLen.toLong())
-        val tensorIds = OnnxTensor.createTensor(env, LongBuffer.wrap(inputIds), shape)
-        val tensorMask = OnnxTensor.createTensor(env, LongBuffer.wrap(attentionMask), shape)
+    private fun loadModel() {
+        labelMap = loadLabelMap()
 
-        val inputs = mapOf("input_ids" to tensorIds, "attention_mask" to tensorMask)
-        val outputs = session.run(inputs)
+        val tok = openSource(tokenizerPathOrAsset)?.use { MmBertTokenizer.load(it) }
+            ?: throw IllegalStateException("Tokenizer '$tokenizerPathOrAsset' not found")
 
-        @Suppress("UNCHECKED_CAST")
-        val rawLogits = (outputs[0].value as Array<FloatArray>)[0]
+        val modelFile = resolveModelFile()
+            ?: throw IllegalStateException(
+                "Model '$modelPathOrAsset' not found. Run `python data/train_classifier.py --export-onnx` " +
+                    "to fine-tune mmBERT and copy model.onnx into app/src/main/assets/."
+            )
+
+        val sessionOptions = OrtSession.SessionOptions().apply {
+            setIntraOpNumThreads(2)
+            setOptimizationLevel(OrtSession.SessionOptions.OptLevel.BASIC_OPT)
+        }
+        // Load from a file path so ONNX Runtime reads the model natively instead of
+        // holding a 100+ MB ByteArray on the Java heap (OOM risk on budget phones).
+        val session = OrtEnvironment.getEnvironment().createSession(modelFile.absolutePath, sessionOptions)
+        ortSession = session
+        tokenizer = tok
+
+        // Sanity check + warm-up: the logits must line up with label_map.json.
+        val logits = runLogits(session, tok, "hello")
+        check(logits.size == labelMap.size) {
+            "Model outputs ${logits.size} logits but label map has ${labelMap.size} intents"
+        }
+    }
+
+    private fun runOnnxInference(
+        session: OrtSession,
+        tok: MmBertTokenizer,
+        text: String,
+        startTime: Long
+    ): IntentClassificationResult {
+        val rawLogits = runLogits(session, tok, text)
 
         // Softmax
         val maxLogit = rawLogits.maxOrNull() ?: 0f
@@ -150,10 +168,6 @@ class OnnxIntentClassifier(
             }
         }
 
-        tensorIds.close()
-        tensorMask.close()
-        outputs.close()
-
         val intent = labelMap[bestIdx] ?: "out_of_scope"
         val latency = max(1L, System.currentTimeMillis() - startTime)
 
@@ -163,6 +177,31 @@ class OnnxIntentClassifier(
             isConfident = highestProb >= confidenceThreshold && intent != "out_of_scope",
             latencyMs = latency
         )
+    }
+
+    private fun runLogits(session: OrtSession, tok: MmBertTokenizer, text: String): FloatArray {
+        val env = OrtEnvironment.getEnvironment()
+        val encoding = tok.encode(text)
+        val shape = longArrayOf(1, encoding.inputIds.size.toLong())
+
+        val inputs = HashMap<String, OnnxTensor>()
+        try {
+            for (name in session.inputNames) {
+                val data = when (name) {
+                    "input_ids" -> encoding.inputIds
+                    "attention_mask" -> encoding.attentionMask
+                    "token_type_ids" -> LongArray(encoding.inputIds.size)
+                    else -> throw IllegalStateException("Unexpected model input '$name'")
+                }
+                inputs[name] = OnnxTensor.createTensor(env, LongBuffer.wrap(data), shape)
+            }
+            session.run(inputs).use { outputs ->
+                @Suppress("UNCHECKED_CAST")
+                return (outputs[0].value as Array<FloatArray>)[0]
+            }
+        } finally {
+            inputs.values.forEach { it.close() }
+        }
     }
 
     private fun runFallbackInference(text: String, startTime: Long): IntentClassificationResult {
@@ -202,18 +241,81 @@ class OnnxIntentClassifier(
         )
     }
 
-    private fun pseudoTokenize(text: String): List<Long> {
-        val words = text.split(Regex("\\s+"))
-        return words.map { word ->
-            (word.hashCode().toLong() and 0x7FFFFFFF) % 250000 + 10L
+    private fun loadLabelMap(): Map<Int, String> {
+        val json = openSource(labelMapPathOrAsset)?.use { it.readBytes().toString(Charsets.UTF_8) }
+            ?: return DEFAULT_LABEL_MAP
+        val idToLabel = JSONObject(json).getJSONObject("id_to_label")
+        return idToLabel.keys().asSequence().associate { it.toInt() to idToLabel.getString(it) }
+    }
+
+    /** Opens an absolute/relative file path if it exists, otherwise an APK asset. */
+    private fun openSource(pathOrAsset: String): InputStream? {
+        val file = File(pathOrAsset)
+        if (file.isFile) return file.inputStream()
+        return try {
+            context?.assets?.open(pathOrAsset)
+        } catch (_: Exception) {
+            null
         }
     }
 
+    /**
+     * ONNX Runtime needs a real file path, so the bundled asset is extracted once into
+     * no-backup storage and re-extracted only when the app is updated.
+     */
+    private fun resolveModelFile(): File? {
+        File(modelPathOrAsset).takeIf { it.isFile }?.let { return it }
+        val ctx = context ?: return null
+
+        val target = File(ctx.noBackupFilesDir, "onnx/$modelPathOrAsset")
+        val stampFile = File(target.parentFile, "$modelPathOrAsset.stamp")
+        @Suppress("DEPRECATION")
+        val stamp = ctx.packageManager.getPackageInfo(ctx.packageName, 0).lastUpdateTime.toString()
+        if (target.isFile && stampFile.isFile && stampFile.readText() == stamp) return target
+
+        val asset = try {
+            ctx.assets.open(modelPathOrAsset)
+        } catch (_: Exception) {
+            return null
+        }
+        target.parentFile?.mkdirs()
+        val tmp = File(target.parentFile, "${target.name}.tmp")
+        asset.use { input -> tmp.outputStream().use { input.copyTo(it, 1 shl 16) } }
+        check(tmp.renameTo(target) || (target.delete() && tmp.renameTo(target))) {
+            "Could not extract $modelPathOrAsset"
+        }
+        stampFile.writeText(stamp)
+        return target
+    }
+
+    private fun log(message: String) {
+        // android.util.Log is a stub in plain JVM unit tests.
+        runCatching { Log.i(TAG, message) }
+    }
+
     override fun close() {
+        // The OrtEnvironment is a process-wide singleton; only the session is ours to close.
         ortSession?.close()
-        ortEnvironment?.close()
         ortSession = null
-        ortEnvironment = null
-        isInitialized = false
+        tokenizer = null
+        activeEngine = Engine.NOT_LOADED
+    }
+
+    private companion object {
+        const val TAG = "OnnxIntentClassifier"
+
+        // Used only if label_map.json is missing; must match data/output/label_map.json.
+        val DEFAULT_LABEL_MAP = mapOf(
+            0 to "activities_available",
+            1 to "amenities_food",
+            2 to "booking_reservation",
+            3 to "farm_location_directions",
+            4 to "out_of_scope",
+            5 to "pet_policy",
+            6 to "price_produce",
+            7 to "price_tour",
+            8 to "tour_duration_difficulty",
+            9 to "visitation_hours"
+        )
     }
 }

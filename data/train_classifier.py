@@ -148,6 +148,18 @@ def export_and_quantize_onnx(model, tokenizer, output_dir, max_length=64, device
     size_mb = os.path.getsize(target_model_onnx) / (1024 * 1024)
     print(f"✅ Synced fine-tuned INT8 model ({size_mb:.1f} MB) to: {target_model_onnx}")
 
+    # The app tokenizes and decodes logits on-device, so ship the exact tokenizer and
+    # label order this model was trained with (OnnxIntentClassifier reads both).
+    tokenizer.backend_tokenizer.save(os.path.join(assets_dir, "tokenizer.json"))
+    id2label = {int(k): v for k, v in model.config.id2label.items()}
+    with open(os.path.join(assets_dir, "label_map.json"), "w", encoding="utf-8") as f:
+        json.dump({
+            "label_to_id": {v: k for k, v in sorted(id2label.items())},
+            "id_to_label": {str(k): v for k, v in sorted(id2label.items())},
+            "num_labels": len(id2label),
+        }, f, indent=2, ensure_ascii=False)
+    print(f"✅ Synced tokenizer.json and label_map.json to: {assets_dir}")
+
     # Remove bulky unquantized files from assets and output to preserve disk space on D:
     for path_to_clean in [
         os.path.join(assets_dir, "model.onnx.data"),
